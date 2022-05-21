@@ -101,7 +101,7 @@
             padding: 10px;
             border-radius: 5px;
             background-color: var(--bg1-color);
-            color: var(--main-text-color);
+            color: var(--hover-text-color);
             font-size: 10px;
 
             position: absolute;
@@ -117,7 +117,7 @@
             width: 6px;
             height: 6px;
             background-color: var(--bg1-color);
-
+            color: var(--hover-text-color);
             position: absolute;
             top: 50%;
             left: calc(100% + 12px);
@@ -142,17 +142,14 @@
         align-items: center;
 
         li {
-            width: 20px;
-            height: 20px;
             border-radius: 50%;
-            background-color: var(--main-text-color);
             cursor: pointer;
 
             display: flex;
             align-items: center;
             justify-content: center;
             &:not(:last-child) {
-                margin-bottom: 10px;
+                margin-bottom: 15px;
             }
         }
     }
@@ -187,22 +184,24 @@
 
         display: flex;
         align-items: center;
-        justify-content: flex-end;
+        justify-content: space-between;
 
         ul {
             display: flex;
             align-items: center;
             padding-right: 5px;
+            padding-left: 5px;
         }
         li {
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
             color: var(--main-text-color);
             cursor: pointer;
             transition: color 300ms;
             &:not(:last-child) {
-                margin-right: 10px;
+                margin-right: 15px;
             }
             &:hover {
                 color: var(--hover-text-color);
@@ -334,7 +333,7 @@
             padding: 10px;
             border-radius: 5px;
             background-color: var(--bg1-color);
-            color: var(--main-text-color);
+            color: var(--hover-text-color);
             font-size: 10px;
 
             position: absolute;
@@ -350,7 +349,7 @@
             width: 6px;
             height: 6px;
             background-color: var(--bg1-color);
-
+            color: var(--hover-text-color);
             position: absolute;
             top: 50%;
             right: calc(100% + 12px);
@@ -381,16 +380,23 @@
         height: 15px;
         background-color: var(--bg1-color);
     }
-    // BUTTONS and ICONS
-    .menu-icon {
-        width: 20px;
-        height: 20px;
+    //  ==================  BUTTONS and ICONS ====================
+    .menu-icon,
+    .header-icon {
         color: var(--main-text-color);
         fill: currentColor;
         transition: color 300ms;
         &:hover {
             color: var(--hover-text-color);
         }
+    }
+    .header-icon {
+        width: 12px;
+        height: 12px;
+    }
+    .menu-icon {
+        width: 20px;
+        height: 20px;
     }
 
     .full-screen-btn {
