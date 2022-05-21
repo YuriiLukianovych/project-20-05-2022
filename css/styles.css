@@ -29,7 +29,8 @@ body {
   padding-top: 50px;
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   font-weight: 400;
-  color: #45515f;
+  color: #000;
+  background-color: var(--main-text-color);
 }
 
 body.is-full-screen {
