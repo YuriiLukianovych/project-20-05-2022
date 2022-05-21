@@ -43,6 +43,10 @@ p {
   color: var(--main-text-color);
 }
 
+li {
+  color: #000;
+}
+
 .container {
   width: 100%;
   padding: 0 10px;
