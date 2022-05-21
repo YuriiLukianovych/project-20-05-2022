@@ -6,10 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css?_v=20220521162003"
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css?_v=20220521173534"
         integrity="sha512-wpPYUAdjBVSE4KJnH1VR1HeZfpl1ub8YT/NKx4PuQ5NmX2tKuGu6U/JRp5y+Y8XG2tV+wKQpNHVUX03MfMFn9Q=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="css/style.min.css?_v=20220521162003">
+    <link rel="stylesheet" href="css/style.min.css?_v=20220521173534">
 </head>
 
 <body class="default">
@@ -18,7 +18,11 @@
             <div class="window__main">
                 <div class="window__left-side">
                     <div class="logo"></div>
-                    <button class="left-side-btn" type="button">></button>
+                    <button class="left-side-btn" type="button">
+                        <svg class="menu-icon">
+                            <use href="img/sprite.svg#right-arrow"></use>
+                        </svg>
+                    </button>
 
                     <ul class="left-side-btn-panel">
                         <li></li>
@@ -43,8 +47,21 @@
                                 <li><span></span><span>lorem</span></li>
                                 <li><span></span><span>lorem</span></li>
                                 <li><span></span><span>lorem</span></li>
-                                <li class="theme-switcher-btn"><span>th</span><span>Theme</span></li>
-                                <li class="full-screen-btn"><span>[ ]</span><span>Full screen</span></li>
+                                <li class="theme-switcher-btn"><span>
+                                        <svg class="menu-icon">
+                                            <use href="img/sprite.svg#theme"></use>
+                                        </svg>
+                                    </span><span>Theme</span></li>
+                                <li class="full-screen-btn">
+                                    <span>
+                                        <svg class="menu-icon">
+                                            <use href="img/sprite.svg#full-screen"></use>
+                                        </svg>
+                                    </span>
+                                    <span>
+                                        Full screen
+                                    </span>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -180,7 +197,7 @@
         </section>
     </main>
 
-    <script src="js/app.min.js?_v=20220521162003"></script>
+    <script src="js/app.min.js?_v=20220521173534"></script>
 </body>
 
 </html>
