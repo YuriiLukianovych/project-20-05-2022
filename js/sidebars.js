@@ -5,6 +5,7 @@ const rightSidebar = document.querySelector(".window__right-sidebar");
 const wndwBody = document.querySelector(".window__body");
 
 leftsideBtn.addEventListener("click", () => {
+    leftsideBtn.classList.toggle("active");
     leftSidebar.classList.toggle("is-hidden");
     if (
         !leftSidebar.classList.contains("is-hidden") ||
@@ -17,6 +18,7 @@ leftsideBtn.addEventListener("click", () => {
 });
 
 rightsideBtn.addEventListener("click", () => {
+    rightsideBtn.classList.toggle("active");
     rightSidebar.classList.toggle("is-hidden");
     if (
         !leftSidebar.classList.contains("is-hidden") ||

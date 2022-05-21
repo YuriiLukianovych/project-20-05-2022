@@ -238,9 +238,16 @@ li {
   background-color: var(--main-text-color);
   position: absolute;
   top: 45px;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  left: 10px;
+  -webkit-transition: -webkit-transform 300ms;
+  transition: -webkit-transform 300ms;
+  transition: transform 300ms;
+  transition: transform 300ms, -webkit-transform 300ms;
+}
+
+.window .left-side-btn.active {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 
 .window ul.left-side-btn-panel {
@@ -426,9 +433,18 @@ li {
   background-color: var(--main-text-color);
   position: absolute;
   top: 45px;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  right: 10px;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  -webkit-transition: -webkit-transform 300ms;
+  transition: -webkit-transform 300ms;
+  transition: transform 300ms;
+  transition: transform 300ms, -webkit-transform 300ms;
+}
+
+.window .right-side-btn.active {
+  -webkit-transform: rotate(0);
+          transform: rotate(0);
 }
 
 .window .sign-in-up {

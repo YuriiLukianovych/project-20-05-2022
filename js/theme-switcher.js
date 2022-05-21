@@ -55,7 +55,6 @@ function themeCustomization() {
         const input = document.querySelector(
             `input[data-theme="${savedTheme}"]`
         );
-        console.log("from localStorage - input => ", input);
         input.checked = true;
     }
 }
