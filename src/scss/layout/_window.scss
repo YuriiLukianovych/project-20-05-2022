@@ -4,7 +4,7 @@
     // margin: 0 auto;
     height: 100vh;
     width: 100vw;
-
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -19,12 +19,6 @@
         flex-grow: 1;
         background-color: var(--bg1-color);
         display: flex;
-    }
-    .menu-icon {
-        width: 20px;
-        height: 20px;
-        fill: currentColor;
-        stroke: currentColor;
     }
     &__left-side {
         height: 100%;
@@ -97,8 +91,8 @@
         top: 45px;
         left: 10px;
         transition: transform 300ms;
-        &.active {
-            transform: rotate(180deg);
+        &.active svg {
+            transform: rotateY(180deg);
         }
 
         &::after {
@@ -112,12 +106,32 @@
 
             position: absolute;
             top: 50%;
-            left: 120%;
+            left: calc(100% + 15px);
             transform: translateY(-50%);
             z-index: 100;
             display: none;
         }
+        &::before {
+            display: block;
+            content: "";
+            width: 6px;
+            height: 6px;
+            background-color: var(--bg1-color);
+
+            position: absolute;
+            top: 50%;
+            left: calc(100% + 12px);
+            transform: translateY(-50%) rotate(45deg);
+            z-index: 100;
+            display: none;
+        }
+        &.active::after {
+            content: "Collapse";
+        }
         &:hover::after {
+            display: block;
+        }
+        &:hover::before {
             display: block;
         }
     }
@@ -151,7 +165,7 @@
 
         display: flex;
         flex-direction: column;
-
+        overflow: hidden;
         border-radius: 0 0 10px 10px;
         &.with-sidebar {
             border-radius: 0 0 10px 0;
@@ -184,16 +198,23 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            color: var(--main-text-color);
+            cursor: pointer;
+            transition: color 300ms;
             &:not(:last-child) {
                 margin-right: 10px;
+            }
+            &:hover {
+                color: var(--hover-text-color);
+            }
+            &:hover svg {
+                transition: color 300ms;
+                color: var(--hover-text-color);
             }
         }
         li span:first-child {
             width: 20px;
             height: 20px;
-            // border-radius: 50%;
-            // background-color: var(--main-text-color);
-            color: var(--main-text-color);
             cursor: pointer;
             display: flex;
             align-items: center;
@@ -202,7 +223,6 @@
         }
         li span:last-child {
             font-size: 10px;
-            color: var(--main-text-color);
         }
     }
     &__body-wrapper {
@@ -296,17 +316,56 @@
     .right-side-btn {
         width: 20px;
         height: 20px;
-        border-radius: 50%;
+        // border-radius: 50%;
         cursor: pointer;
         // margin-top: 10px;
-        background-color: var(--main-text-color);
+        background-color: transparent;
         position: absolute;
         top: 45px;
         right: 10px;
-        transform: rotate(180deg);
         transition: transform 300ms;
-        &.active {
-            transform: rotate(0);
+        &.active svg {
+            transform: rotateY(180deg);
+        }
+
+        &::after {
+            display: block;
+            content: "Expand";
+            padding: 10px;
+            border-radius: 5px;
+            background-color: var(--bg1-color);
+            color: var(--main-text-color);
+            font-size: 10px;
+
+            position: absolute;
+            top: 50%;
+            right: calc(100% + 15px);
+            transform: translateY(-50%);
+            z-index: 100;
+            display: none;
+        }
+        &::before {
+            display: block;
+            content: "";
+            width: 6px;
+            height: 6px;
+            background-color: var(--bg1-color);
+
+            position: absolute;
+            top: 50%;
+            right: calc(100% + 12px);
+            transform: translateY(-50%) rotate(45deg);
+            z-index: 100;
+            display: none;
+        }
+        &.active::after {
+            content: "Collapse";
+        }
+        &:hover::after {
+            display: block;
+        }
+        &:hover::before {
+            display: block;
         }
     }
     .sign-in-up {
@@ -314,14 +373,26 @@
         top: 10px;
         left: 50%;
         transform: translateX(-50%);
-        background-color: var(--main-text-color);
+        background-color: transparent;
+        cursor: pointer;
     }
 
     &__footer {
-        height: 20px;
+        height: 15px;
         background-color: var(--bg1-color);
     }
-    // BUTTONS
+    // BUTTONS and ICONS
+    .menu-icon {
+        width: 20px;
+        height: 20px;
+        color: var(--main-text-color);
+        fill: currentColor;
+        transition: color 300ms;
+        &:hover {
+            color: var(--hover-text-color);
+        }
+    }
+
     .full-screen-btn {
         .minimize-icon {
             display: none;
