@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
         integrity="sha512-wpPYUAdjBVSE4KJnH1VR1HeZfpl1ub8YT/NKx4PuQ5NmX2tKuGu6U/JRp5y+Y8XG2tV+wKQpNHVUX03MfMFn9Q=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/style.min.css">
 </head>
 
 <body class="default">
@@ -18,7 +18,11 @@
             <div class="window__main">
                 <div class="window__left-side">
                     <div class="logo"></div>
-                    <button class="left-side-btn" type="button">></button>
+                    <button class="left-side-btn" type="button">
+                        <svg class="menu-icon">
+                            <use href="@img/sprite.svg#right-arrow"></use>
+                        </svg>
+                    </button>
 
                     <ul class="left-side-btn-panel">
                         <li></li>
@@ -30,23 +34,45 @@
 
                 </div>
                 <div class="window__left-sidebar is-hidden">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Animi sit voluptatum repellat similique,
-                    inventore ducimus necessitatibus autem nesciunt eum sequi!
+                    <div class="left-sidebar__header">OpenvalU</div>
+                    <div class="left-sidebar__body">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur in eum fugit beatae
+                        inventore est aut error, quod asperiores itaque?
+                    </div>
                 </div>
                 <div class="window__working-space">
                     <div class="window__header-wrapper">
                         <div class="window__header">
                             <ul>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li class="theme-switcher-btn">th</li>
-                                <li class="full-screem-btn">[ ]</li>
+                                <li><span></span><span>lorem</span></li>
+                                <li><span></span><span>lorem</span></li>
+                                <li><span></span><span>lorem</span></li>
+                                <li class="theme-switcher-btn"><span>
+                                        <svg class="menu-icon">
+                                            <use href="@img/sprite.svg#theme"></use>
+                                        </svg>
+                                    </span><span>Theme</span></li>
+                                <li class="full-screen-btn">
+                                    <span>
+                                        <svg class="menu-icon full-screen-icon">
+                                            <use href="@img/sprite.svg#full-screen"></use>
+                                        </svg>
+                                        <svg class="menu-icon minimize-icon">
+                                            <use href="@img/sprite.svg#minimize"></use>
+                                        </svg>
+                                    </span>
+                                    <span>
+                                        Full screen
+                                    </span>
+                                </li>
                             </ul>
                         </div>
                     </div>
                     <div class="window__body-wrapper">
                         <div class="window__body">
+                            <div class="window__body-note is-hidden">
+                                Press <span>Esc</span> to exit full screen mode
+                            </div>
                             <h1>Lorem Ipsum</h1>
                             <br>
                             <p>
@@ -174,9 +200,7 @@
         </section>
     </main>
 
-    <script src="js/full-screen.js" type="module"></script>
-    <script src="js/theme-switcher.js" type="module"></script>
-    <script src="js/sidebars.js" type="module"></script>
+    <script src="js/app.min.js"></script>
 </body>
 
 </html>
