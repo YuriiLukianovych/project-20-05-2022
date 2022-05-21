@@ -37,6 +37,12 @@ body.is-full-screen {
   padding-top: 0px;
 }
 
+div,
+h1,
+p {
+  color: var(--main-text-color);
+}
+
 .container {
   width: 100%;
   padding: 0 10px;
