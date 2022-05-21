@@ -10,6 +10,7 @@ export const sideBar = () => {
         leftsideBtn.classList.toggle("active");
         leftSidebar.classList.toggle("is-hidden");
         wndwWorkingSpace.classList.toggle("with-sidebar");
+
         if (
             !leftSidebar.classList.contains("is-hidden") ||
             !rightSidebar.classList.contains("is-hidden")

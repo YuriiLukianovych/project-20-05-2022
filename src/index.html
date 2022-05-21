@@ -20,7 +20,7 @@
                     <div class="logo"></div>
                     <button class="left-side-btn" type="button">
                         <svg class="menu-icon">
-                            <use href="@img/sprite.svg#right-arrow"></use>
+                            <use href="@img/sprite.svg#right-icon"></use>
                         </svg>
                     </button>
 
@@ -55,10 +55,10 @@
                                 <li class="full-screen-btn">
                                     <span>
                                         <svg class="menu-icon full-screen-icon">
-                                            <use href="@img/sprite.svg#full-screen"></use>
+                                            <use href="@img/sprite.svg#fullscreen"></use>
                                         </svg>
                                         <svg class="menu-icon minimize-icon">
-                                            <use href="@img/sprite.svg#minimize"></use>
+                                            <use href="@img/sprite.svg#fullscreen-exit"></use>
                                         </svg>
                                     </span>
                                     <span>
@@ -103,14 +103,26 @@
                     </div>
                 </div>
                 <div class="window__right-side">
-                    <button class="sign-in-up" type="button">log</button>
-                    <button class="right-side-btn" type="button">></button>
+                    <button class="sign-in-up" type="button">
+                        <svg class="menu-icon">
+                            <use href="@img/sprite.svg#person"></use>
+                        </svg>
+                    </button>
+                    <button class="right-side-btn" type="button">
+                        <svg class="menu-icon">
+                            <use href="@img/sprite.svg#left-icon"></use>
+                        </svg>
+                    </button>
                 </div>
             </div>
             <div class="window__footer"></div>
             <div class="backdrop backdrop-theme-switcher is-hidden">
                 <div class="theme-switcher-wrapper">
-                    <button class="close-theme-switcher-btn" type="button">X</button>
+                    <button class="close-theme-switcher-btn" type="button">
+                        <svg>
+                            <use href="@img/sprite.svg#x"></use>
+                        </svg>
+                    </button>
                     <h2>Theme Selection</h2>
                     <ul class="theme__list">
                         <li class="theme__item" data-theme="theme-1">
