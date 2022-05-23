@@ -70,13 +70,19 @@
     .logo {
         width: 30px;
         height: 30px;
-        background-color: tomato;
+        // background-color: tomato;
         border-radius: 50%;
+        // border: 2px solid red;
 
         position: absolute;
         top: 5px;
         left: 50%;
         transform: translateX(-50%);
+        svg {
+            color: red;
+            width: 25px;
+            height: 25px;
+        }
     }
     .left-side-btn {
         display: block;
