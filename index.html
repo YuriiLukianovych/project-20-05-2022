@@ -6,10 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css?_v=20220523125335"
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css?_v=20220523164705"
         integrity="sha512-wpPYUAdjBVSE4KJnH1VR1HeZfpl1ub8YT/NKx4PuQ5NmX2tKuGu6U/JRp5y+Y8XG2tV+wKQpNHVUX03MfMFn9Q=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="css/style.min.css?_v=20220523125335">
+    <link rel="stylesheet" href="css/style.min.css?_v=20220523164705">
 </head>
 
 <body class="default">
@@ -67,7 +67,7 @@
                 <div class="window__working-space">
                     <div class="window__header-wrapper">
                         <div class="window__header">
-                            <ul>
+                            <ul class="window__header-list">
                                 <li class="active" data-temp-main-content-btn>
                                     <span>
                                         <svg class="header-icon">
@@ -104,7 +104,7 @@
                                     </span><span>lorem</span>
                                 </li>
                             </ul>
-                            <ul>
+                            <ul class="window__header-list">
                                 <li><span>
                                         <svg class="header-icon">
                                             <use href="img/sprite.svg#wrench"></use>
@@ -116,13 +116,37 @@
                                         </svg>
                                     </span><span>lorem</span></li>
                                 <li class="window-split"><span>
-                                        <svg class="header-icon">
+                                        <svg class="header-icon one">
                                             <use href="img/sprite.svg#split-one"></use>
                                         </svg>
-                                        <svg class="header-icon">
+                                        <svg class="header-icon two-col" style="transform: rotate(90deg);">
                                             <use href="img/sprite.svg#split-two"></use>
                                         </svg>
-                                    </span><span>One</span></li>
+                                        <svg class="header-icon two-row">
+                                            <use href="img/sprite.svg#split-two"></use>
+                                        </svg>
+                                    </span><span>One</span>
+                                    <ul class="split-submenu">
+                                        <li class="split-submenu__item">
+                                            <svg class="header-icon">
+                                                <use href="img/sprite.svg#split-two"></use>
+                                            </svg>
+                                            <span>One</span>
+                                        </li>
+                                        <li class="split-submenu__item">
+                                            <svg class="header-icon" style="transform: rotate(90deg);">
+                                                <use href="img/sprite.svg#split-two"></use>
+                                            </svg>
+                                            <span>Two Row</span>
+                                        </li>
+                                        <li class="split-submenu__item">
+                                            <svg class="header-icon">
+                                                <use href="img/sprite.svg#split-two"></use>
+                                            </svg>
+                                            <span>Two Col</span>
+                                        </li>
+                                    </ul>
+                                </li>
                                 <li class="theme-switcher-btn"><span>
                                         <svg class="header-icon">
                                             <use href="img/sprite.svg#theme"></use>
@@ -146,16 +170,10 @@
                     </div>
                     <!-- Головне вікно =============================================================== -->
                     <div class="window__body-wrapper">
-                        <div class="window__body" data-main-window>
-                            <div class="window__body-one" id="split-1">
+                        <div class="window__body" id="split-container" data-main-window>
+                            <div class="window__body-one in-focus" id="split-1">
                                 <!-- тимчасовы шаблони для головного екрану -->
-                                <!-- Теми -->
                                 <div class="theme-switcher-wrapper dn">
-                                    <!-- <button class="close-theme-switcher-btn" type="button">
-                                                                    <svg>
-                                                                        <use href="img/sprite.svg#x"></use>
-                                                                    </svg>
-                                                                </button> -->
                                     <h2>Theme Selection</h2>
                                     <ul class="theme__list">
                                         <li class="theme__item" data-theme="theme-1">
@@ -168,7 +186,7 @@
                                                 </div>
                                             </div>
                                             <input type="radio" name="color-switcher" id="color-switcher1"
-                                                data-theme="theme-1" checked>
+                                                data-theme="theme-1" checked />
                                             <label for="color-switcher1">Default</label>
                                         </li>
                                         <li class="theme__item" data-theme="theme-2">
@@ -181,7 +199,7 @@
                                                 </div>
                                             </div>
                                             <input type="radio" name="color-switcher" id="color-switcher2"
-                                                data-theme="theme-2">
+                                                data-theme="theme-2" />
                                             <label for="color-switcher2">Midnight Blue</label>
                                         </li>
                                         <li class="theme__item" data-theme="theme-3">
@@ -194,7 +212,7 @@
                                                 </div>
                                             </div>
                                             <input type="radio" name="color-switcher" id="color-switcher3"
-                                                data-theme="theme-3">
+                                                data-theme="theme-3" />
                                             <label for="color-switcher3">Deep Ocean</label>
                                         </li>
                                         <li class="theme__item" data-theme="theme-4">
@@ -207,7 +225,7 @@
                                                 </div>
                                             </div>
                                             <input type="radio" name="color-switcher" id="color-switcher4"
-                                                data-theme="theme-4">
+                                                data-theme="theme-4" />
                                             <label for="color-switcher4">Monochrome</label>
                                         </li>
                                         <li class="theme__item" data-theme="theme-5">
@@ -220,7 +238,7 @@
                                                 </div>
                                             </div>
                                             <input type="radio" name="color-switcher" id="color-switcher5"
-                                                data-theme="theme-5">
+                                                data-theme="theme-5" />
                                             <label for="color-switcher5">Pitch Black</label>
                                         </li>
                                         <li class="theme__item" data-theme="theme-6">
@@ -233,7 +251,7 @@
                                                 </div>
                                             </div>
                                             <input type="radio" name="color-switcher" id="color-switcher6"
-                                                data-theme="theme-6">
+                                                data-theme="theme-6" />
                                             <label for="color-switcher6">Other Theme</label>
                                         </li>
                                     </ul>
@@ -241,18 +259,18 @@
                                     <div class="colors">
                                         <label for="positive-color">Positive Color:
                                             <input type="color" name="positive-color" id="positive-color"
-                                                value="#57d03b">
+                                                value="#57d03b" />
                                         </label>
                                         <label for="negative-color">Negative Color:
                                             <input type="color" name="negative-color" id="negative-color"
-                                                value="#ff3c41">
+                                                value="#ff3c41" />
                                         </label>
                                     </div>
                                 </div>
 
 
                                 <!-- тимчасовий Головний контент -->
-                                <div class="temp-main-content" data-temp-main-content>
+                                <div class="temp-main-content dn" data-temp-main-content>
                                     <div class="window__body-note is-hidden">
                                         Press <span>Esc</span> to exit full screen mode
                                     </div>
@@ -297,7 +315,20 @@
                                     </p>
                                 </div>
                             </div>
-                            <div class="window__body-two" id="split-2"></div>
+                            <div class="window__body-two dn" id="split-2">
+                                <p class="dn">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
+                                    doloribus eos
+                                    expedita vel, sequi assumenda asperiores dignissimos alias, aspernatur quas placeat
+                                    magnam beatae ut, facilis at? Quia, ex? Quam dolorem odio nemo voluptas esse maxime
+                                    officia autem, provident eius amet eos accusantium deleniti sequi numquam nam
+                                    architecto magni id itaque.</p>
+                                <p class="dn">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
+                                    doloribus eos
+                                    expedita vel, sequi assumenda asperiores dignissimos alias, aspernatur quas placeat
+                                    magnam beatae ut, facilis at? Quia, ex? Quam dolorem odio nemo voluptas esse maxime
+                                    officia autem, provident eius amet eos accusantium deleniti sequi numquam nam
+                                    architecto magni id itaque.</p>
+                            </div>
 
                         </div>
                         <div class="window__right-sidebar is-hidden">
@@ -324,7 +355,7 @@
         </section>
     </main>
 
-    <script src="js/app.min.js?_v=20220523125335"></script>
+    <script src="js/app.min.js?_v=20220523164705"></script>
 </body>
 
 </html>
