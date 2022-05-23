@@ -1,23 +1,23 @@
-.backdrop {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+// .backdrop {
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//     background-color: rgba(0, 0, 0, 0.5);
+//     transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
 
-    &.is-hidden {
-        transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1) 250ms;
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
-    }
-}
+//     &.is-hidden {
+//         transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1) 250ms;
+//         opacity: 0;
+//         visibility: hidden;
+//         pointer-events: none;
+//     }
+// }
 .close-theme-switcher-btn {
     margin-left: auto;
     padding: 3px;
@@ -40,8 +40,8 @@
 }
 
 .theme-switcher-wrapper {
-    height: 80%;
-    width: 80%;
+    height: 95%;
+    width: 100%;
     // background-color: var(--bg3-color);
     background-color: transparent;
     transition: var(--bg-transition);

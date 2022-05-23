@@ -5,8 +5,8 @@ export const fullScreen = () => {
     fsBtn.addEventListener("click", () => {
         closeFullscreen();
         openFullscreen();
-        fsBtn.classList.toggle("active");
-        if (fsBtn.classList.contains("active")) {
+        fsBtn.classList.toggle("activeFs");
+        if (fsBtn.classList.contains("activeFs")) {
             fsBtn.lastElementChild.textContent = "Minimize";
         } else {
             fsBtn.lastElementChild.textContent = "Full screen";

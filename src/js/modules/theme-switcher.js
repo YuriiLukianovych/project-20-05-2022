@@ -119,12 +119,24 @@ export const themeSwitcher = () => {
     // ==================================== open \ close theme switcher ==============================
     const openBtn = document.querySelector(".theme-switcher-btn");
     const closeBtn = document.querySelector(".close-theme-switcher-btn");
-    const backdropTheme = document.querySelector(".backdrop-theme-switcher");
+    const wrapperTheme = document.querySelector(".theme-switcher-wrapper");
+    const mainWindow = document.querySelector("[data-main-window]");
+    const allButtons = document.querySelectorAll(".window__header li");
 
     openBtn.addEventListener("click", () => {
-        backdropTheme.classList.toggle("is-hidden");
+        // backdropTheme.classList.toggle("is-hidden");
+        // mainWindow.firstElementChild.classList.add("test");
+        [...mainWindow.children].forEach((el) => {
+            el.classList.add("dn");
+        });
+        wrapperTheme.classList.remove("dn");
+
+        allButtons.forEach((btn) => {
+            btn.classList.remove("active");
+        });
+        openBtn.classList.add("active");
     });
-    closeBtn.addEventListener("click", () => {
-        backdropTheme.classList.toggle("is-hidden");
-    });
+    // closeBtn.addEventListener("click", () => {
+    //     backdropTheme.classList.toggle("is-hidden");
+    // });
 };
