@@ -26,6 +26,7 @@ export const splitWindow = () => {
     });
 
     function onSubMenuSplitClick(e) {
+        console.log("click!!!");
         const currentSplitMode = e.currentTarget.dataset.splitmode;
         // windowSplitText.textContent = currentSplitMode;
         splitIconsList.forEach((el) => {
@@ -47,10 +48,10 @@ export const splitWindow = () => {
                 noSplit();
                 break;
             case "two-row":
-                splitVertical();
+                splitHorizontal();
                 break;
             case "two-col":
-                splitHorizontal();
+                splitVertical();
                 break;
 
             default:
@@ -65,18 +66,53 @@ export const splitWindow = () => {
 
     function focusInWindow() {
         // mainWindow.dataset.split === "2"; 1 or 2
+
         split1.addEventListener("focusin", () => {
+            if (split2.hasAttribute("data-active")) {
+                split2.removeAttribute("data-active");
+            }
+            if (split2.classList.contains("in-focus")) {
+                split2.classList.remove("in-focus");
+            }
             if (mainWindow.dataset.split === "1") {
                 split1.classList.remove("in-focus");
             }
+            if (mainWindow.dataset.split === "2") {
+                split1.classList.add("in-focus");
+                split1.setAttribute("data-active", "true");
+            }
+        });
+
+        split2.addEventListener("focusin", () => {
+            if (split1.hasAttribute("data-active")) {
+                split1.removeAttribute("data-active");
+            }
+            if (split1.classList.contains("in-focus")) {
+                split1.classList.remove("in-focus");
+            }
+            if (mainWindow.dataset.split === "1") {
+                split2.classList.remove("in-focus");
+            }
+            if (mainWindow.dataset.split === "2") {
+                split2.classList.add("in-focus");
+                split2.setAttribute("data-active", "true");
+            }
         });
     }
-    function splitHorizontal() {
-        // if (Split(["#split-1", "#split-2"])) {
-        //     Split(["#split-1", "#split-2"]).destroy();
-        // }
+    function splitVertical() {
+        console.log("split vertical");
+        if (split1.hasAttribute("data-active")) {
+            split1.classList.add("in-focus");
+            split2.classList.remove("dn");
+        }
+        if (split2.hasAttribute("data-active")) {
+            split2.classList.add("in-focus");
+            split1.classList.remove("dn");
+        }
+
         if (split !== 0) {
             split.destroy();
+            split = 0;
         }
         split2.classList.remove("dn");
         mainWindow.dataset.split = "2";
@@ -98,14 +134,22 @@ export const splitWindow = () => {
         });
     }
 
-    function splitVertical() {
-        // if (Split(["#split-1", "#split-2"])) {
-        //     Split(["#split-1", "#split-2"]).destroy();
-        // }
+    function splitHorizontal() {
+        console.log("split horizontal");
+        if (split1.hasAttribute("data-active")) {
+            split1.classList.add("in-focus");
+            split2.classList.remove("dn");
+        }
+        if (split2.hasAttribute("data-active")) {
+            split2.classList.add("in-focus");
+            split1.classList.remove("dn");
+        }
+
         if (split !== 0) {
             split.destroy();
+            split = 0;
         }
-        split2.classList.remove("dn");
+
         mainWindow.dataset.split = "2";
         const gutter = document.querySelector(".gutter");
         if (gutter) {
@@ -126,15 +170,29 @@ export const splitWindow = () => {
     }
 
     function noSplit() {
-        // if (Split(["#split-1", "#split-2"])) {
-        //     Split(["#split-1", "#split-2"]).destroy();
-        // }
+        console.log("no split");
+        if (split1.classList.contains("in-focus")) {
+            split1.classList.remove("in-focus");
+        }
+
+        if (split2.classList.contains("in-focus")) {
+            split2.classList.remove("in-focus");
+        }
 
         if (split !== 0) {
             split.destroy();
+            split = 0;
         }
-        split2.classList.add("dn");
+        console.log("split -> ", split);
+        if (!split1.hasAttribute("data-active")) {
+            split1.classList.add("dn");
+        }
+        if (!split2.hasAttribute("data-active")) {
+            split2.classList.add("dn");
+        }
+
         mainWindow.dataset.split = "1";
+
         const gutter = document.querySelector(".gutter");
         if (gutter) {
             gutter.remove();
