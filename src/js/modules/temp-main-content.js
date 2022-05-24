@@ -5,7 +5,7 @@ export const tempMainContent = () => {
     const mainWindow = document.querySelector("[data-main-window]");
 
     mainBtn.addEventListener("click", () => {
-        [...mainWindow.children].forEach((el) => {
+        [...mainWindow.firstElementChild.children].forEach((el) => {
             el.classList.add("dn");
         });
         mainContent.classList.remove("dn");

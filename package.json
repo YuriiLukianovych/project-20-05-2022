@@ -31,6 +31,7 @@
     "gulp-newer": "latest",
     "gulp-notify": "latest",
     "gulp-plumber": "latest",
+    "gulp-precompile-handlebars": "^2.0.7",
     "gulp-rename": "latest",
     "gulp-replace": "latest",
     "gulp-sass": "latest",
@@ -42,11 +43,15 @@
     "gulp-webp-html-nosvg": "latest",
     "gulp-webpcss": "latest",
     "gulp-zip": "latest",
+    "handlebars": "^4.7.7",
     "sass": "latest",
     "swiper": "latest",
     "vinyl-ftp": "latest",
     "webp-converter": "2.2.3",
     "webpack": "latest",
     "webpack-stream": "latest"
+  },
+  "dependencies": {
+    "split.js": "^1.6.5"
   }
 }

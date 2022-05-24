@@ -1,3 +1,6 @@
+import { templateThemes } from "../../templates/themes.js";
+// console.log(templateThemes);
+
 export const themeSwitcher = () => {
     // ==================  Theme Selection ============================
 
@@ -126,7 +129,7 @@ export const themeSwitcher = () => {
     openBtn.addEventListener("click", () => {
         // backdropTheme.classList.toggle("is-hidden");
         // mainWindow.firstElementChild.classList.add("test");
-        [...mainWindow.children].forEach((el) => {
+        [...mainWindow.firstElementChild.children].forEach((el) => {
             el.classList.add("dn");
         });
         wrapperTheme.classList.remove("dn");

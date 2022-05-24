@@ -67,8 +67,8 @@
                 <div class="window__working-space">
                     <div class="window__header-wrapper">
                         <div class="window__header">
-                            <ul>
-                                <li data-temp-main-content-btn>
+                            <ul class="window__header-list">
+                                <li class="active" data-temp-main-content-btn>
                                     <span>
                                         <svg class="header-icon">
                                             <use href="@img/sprite.svg#temp"></use>
@@ -104,7 +104,7 @@
                                     </span><span>lorem</span>
                                 </li>
                             </ul>
-                            <ul>
+                            <ul class="window__header-list">
                                 <li><span>
                                         <svg class="header-icon">
                                             <use href="@img/sprite.svg#wrench"></use>
@@ -115,11 +115,51 @@
                                             <use href="@img/sprite.svg#wrench"></use>
                                         </svg>
                                     </span><span>lorem</span></li>
-                                <li><span>
-                                        <svg class="header-icon">
-                                            <use href="@img/sprite.svg#wrench"></use>
-                                        </svg>
-                                    </span><span>lorem</span></li>
+                                <li class="window-split">
+                                    <div class="window-split-button">
+                                        <span>
+                                            <svg class="header-icon" data-splitmode="one">
+                                                <use href="@img/sprite.svg#split-one"></use>
+                                            </svg>
+                                            <svg class="header-icon dn" data-splitmode="two-col">
+                                                <use href="@img/sprite.svg#split-two"></use>
+                                            </svg>
+                                            <svg class="header-icon dn" style="transform: rotate(90deg);"
+                                                data-splitmode="two-row">
+                                                <use href="@img/sprite.svg#split-two"></use>
+                                            </svg>
+                                        </span>
+                                        <span class="window-split-text"></span>
+                                    </div>
+                                    <ul class="split-submenu split-submenu-hidden">
+                                        <li class="split-submenu__item active-icon" data-splitmode="one">
+                                            <div class="submenu-icon-wrapper">
+                                                <svg class="header-icon">
+                                                    <use href="@img/sprite.svg#split-one"></use>
+                                                </svg>
+                                            </div>
+                                            <span>One</span>
+                                        </li>
+                                        <li class="split-submenu__item" data-splitmode="two-row">
+                                            <div class="submenu-icon-wrapper">
+                                                <svg class="header-icon" style="transform: rotate(90deg);">
+                                                    <use href="@img/sprite.svg#split-two"></use>
+                                                </svg>
+                                            </div>
+
+                                            <span>Two Row</span>
+                                        </li>
+                                        <li class="split-submenu__item" data-splitmode="two-col">
+                                            <div class="submenu-icon-wrapper">
+                                                <svg class="header-icon">
+                                                    <use href="@img/sprite.svg#split-two"></use>
+                                                </svg>
+                                            </div>
+
+                                            <span>Two Col</span>
+                                        </li>
+                                    </ul>
+                                </li>
                                 <li class="theme-switcher-btn"><span>
                                         <svg class="header-icon">
                                             <use href="@img/sprite.svg#theme"></use>
@@ -143,148 +183,166 @@
                     </div>
                     <!-- Головне вікно =============================================================== -->
                     <div class="window__body-wrapper">
-                        <div class="window__body" data-main-window>
-                            <!-- тимчасовы шаблони для головного екрану -->
-                            <!-- Теми -->
+                        <div class="window__body" id="split-container" data-main-window data-split="1">
+                            <div class="window__body-one" id="split-1" tabindex="0" data-active="true">
+                                <!-- тимчасовы шаблони для головного екрану -->
+                                <div class="theme-switcher-wrapper dn">
+                                    <h2>Theme Selection</h2>
+                                    <ul class="theme__list">
+                                        <li class="theme__item" data-theme="theme-1">
+                                            <div class="preview__wrapper default">
+                                                <div class="preview">
+                                                    <div class="preview__header">
+                                                        <div class="preview__text"></div>
+                                                    </div>
+                                                    <div class="preview__body"></div>
+                                                </div>
+                                            </div>
+                                            <input type="radio" name="color-switcher" id="color-switcher1"
+                                                data-theme="theme-1" checked />
+                                            <label for="color-switcher1">Default</label>
+                                        </li>
+                                        <li class="theme__item" data-theme="theme-2">
+                                            <div class="preview__wrapper midnight-blue">
+                                                <div class="preview">
+                                                    <div class="preview__header">
+                                                        <div class="preview__text"></div>
+                                                    </div>
+                                                    <div class="preview__body"></div>
+                                                </div>
+                                            </div>
+                                            <input type="radio" name="color-switcher" id="color-switcher2"
+                                                data-theme="theme-2" />
+                                            <label for="color-switcher2">Midnight Blue</label>
+                                        </li>
+                                        <li class="theme__item" data-theme="theme-3">
+                                            <div class="preview__wrapper deep-ocean">
+                                                <div class="preview">
+                                                    <div class="preview__header">
+                                                        <div class="preview__text"></div>
+                                                    </div>
+                                                    <div class="preview__body"></div>
+                                                </div>
+                                            </div>
+                                            <input type="radio" name="color-switcher" id="color-switcher3"
+                                                data-theme="theme-3" />
+                                            <label for="color-switcher3">Deep Ocean</label>
+                                        </li>
+                                        <li class="theme__item" data-theme="theme-4">
+                                            <div class="preview__wrapper monochrome">
+                                                <div class="preview">
+                                                    <div class="preview__header">
+                                                        <div class="preview__text"></div>
+                                                    </div>
+                                                    <div class="preview__body"></div>
+                                                </div>
+                                            </div>
+                                            <input type="radio" name="color-switcher" id="color-switcher4"
+                                                data-theme="theme-4" />
+                                            <label for="color-switcher4">Monochrome</label>
+                                        </li>
+                                        <li class="theme__item" data-theme="theme-5">
+                                            <div class="preview__wrapper pitch-black">
+                                                <div class="preview">
+                                                    <div class="preview__header">
+                                                        <div class="preview__text"></div>
+                                                    </div>
+                                                    <div class="preview__body"></div>
+                                                </div>
+                                            </div>
+                                            <input type="radio" name="color-switcher" id="color-switcher5"
+                                                data-theme="theme-5" />
+                                            <label for="color-switcher5">Pitch Black</label>
+                                        </li>
+                                        <li class="theme__item" data-theme="theme-6">
+                                            <div class="preview__wrapper other-theme">
+                                                <div class="preview">
+                                                    <div class="preview__header">
+                                                        <div class="preview__text"></div>
+                                                    </div>
+                                                    <div class="preview__body"></div>
+                                                </div>
+                                            </div>
+                                            <input type="radio" name="color-switcher" id="color-switcher6"
+                                                data-theme="theme-6" />
+                                            <label for="color-switcher6">Other Theme</label>
+                                        </li>
+                                    </ul>
+                                    <h2>Custom Color Selections</h2>
+                                    <div class="colors">
+                                        <label for="positive-color">Positive Color:
+                                            <input type="color" name="positive-color" id="positive-color"
+                                                value="#57d03b" />
+                                        </label>
+                                        <label for="negative-color">Negative Color:
+                                            <input type="color" name="negative-color" id="negative-color"
+                                                value="#ff3c41" />
+                                        </label>
+                                    </div>
+                                </div>
 
-                            <div class="theme-switcher-wrapper dn">
-                                <!-- <button class="close-theme-switcher-btn" type="button">
-                                    <svg>
-                                        <use href="@img/sprite.svg#x"></use>
-                                    </svg>
-                                </button> -->
-                                <h2>Theme Selection</h2>
-                                <ul class="theme__list">
-                                    <li class="theme__item" data-theme="theme-1">
-                                        <div class="preview__wrapper default">
-                                            <div class="preview">
-                                                <div class="preview__header">
-                                                    <div class="preview__text"></div>
-                                                </div>
-                                                <div class="preview__body"></div>
-                                            </div>
-                                        </div>
-                                        <input type="radio" name="color-switcher" id="color-switcher1"
-                                            data-theme="theme-1" checked>
-                                        <label for="color-switcher1">Default</label>
-                                    </li>
-                                    <li class="theme__item" data-theme="theme-2">
-                                        <div class="preview__wrapper midnight-blue">
-                                            <div class="preview">
-                                                <div class="preview__header">
-                                                    <div class="preview__text"></div>
-                                                </div>
-                                                <div class="preview__body"></div>
-                                            </div>
-                                        </div>
-                                        <input type="radio" name="color-switcher" id="color-switcher2"
-                                            data-theme="theme-2">
-                                        <label for="color-switcher2">Midnight Blue</label>
-                                    </li>
-                                    <li class="theme__item" data-theme="theme-3">
-                                        <div class="preview__wrapper deep-ocean">
-                                            <div class="preview">
-                                                <div class="preview__header">
-                                                    <div class="preview__text"></div>
-                                                </div>
-                                                <div class="preview__body"></div>
-                                            </div>
-                                        </div>
-                                        <input type="radio" name="color-switcher" id="color-switcher3"
-                                            data-theme="theme-3">
-                                        <label for="color-switcher3">Deep Ocean</label>
-                                    </li>
-                                    <li class="theme__item" data-theme="theme-4">
-                                        <div class="preview__wrapper monochrome">
-                                            <div class="preview">
-                                                <div class="preview__header">
-                                                    <div class="preview__text"></div>
-                                                </div>
-                                                <div class="preview__body"></div>
-                                            </div>
-                                        </div>
-                                        <input type="radio" name="color-switcher" id="color-switcher4"
-                                            data-theme="theme-4">
-                                        <label for="color-switcher4">Monochrome</label>
-                                    </li>
-                                    <li class="theme__item" data-theme="theme-5">
-                                        <div class="preview__wrapper pitch-black">
-                                            <div class="preview">
-                                                <div class="preview__header">
-                                                    <div class="preview__text"></div>
-                                                </div>
-                                                <div class="preview__body"></div>
-                                            </div>
-                                        </div>
-                                        <input type="radio" name="color-switcher" id="color-switcher5"
-                                            data-theme="theme-5">
-                                        <label for="color-switcher5">Pitch Black</label>
-                                    </li>
-                                    <li class="theme__item" data-theme="theme-6">
-                                        <div class="preview__wrapper other-theme">
-                                            <div class="preview">
-                                                <div class="preview__header">
-                                                    <div class="preview__text"></div>
-                                                </div>
-                                                <div class="preview__body"></div>
-                                            </div>
-                                        </div>
-                                        <input type="radio" name="color-switcher" id="color-switcher6"
-                                            data-theme="theme-6">
-                                        <label for="color-switcher6">Other Theme</label>
-                                    </li>
-                                </ul>
-                                <h2>Custom Color Selections</h2>
-                                <div class="colors">
-                                    <label for="positive-color">Positive Color:
-                                        <input type="color" name="positive-color" id="positive-color" value="#57d03b">
-                                    </label>
-                                    <label for="negative-color">Negative Color:
-                                        <input type="color" name="negative-color" id="negative-color" value="#ff3c41">
-                                    </label>
+
+                                <!-- тимчасовий Головний контент -->
+                                <div class="temp-main-content dn" data-temp-main-content>
+                                    <div class="window__body-note is-hidden">
+                                        Press <span>Esc</span> to exit full screen mode
+                                    </div>
+                                    <h1>Lorem Ipsum</h1>
+                                    <br>
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima in earum
+                                        reprehenderit
+                                        quasi dolor iste et molestias temporibus expedita, doloremque dolore
+                                        perspiciatis
+                                        necessitatibus aperiam delectus nisi quam consequuntur molestiae assumenda quas
+                                        minus
+                                        voluptatem fuga. Tenetur omnis aut neque necessitatibus. Voluptatem sapiente
+                                        voluptatibus architecto accusamus earum? Sunt modi officiis quam, ipsum possimus
+                                        laborum
+                                        explicabo dignissimos facere alias reiciendis ipsa voluptatem provident vero
+                                        nihil
+                                        tenetur animi libero natus officia ducimus? Praesentium repellendus vero, minima
+                                        voluptatibus autem possimus, hic explicabo eligendi illo dolor eaque deleniti
+                                        eos
+                                        incidunt non unde provident est voluptatem, laboriosam et. Consectetur
+                                        blanditiis
+                                        saepe
+                                        magnam. Quo voluptas nesciunt laborum quae sint quas, illo iste vero doloribus.
+                                        Odio
+                                        repudiandae odit iste dolores illo adipisci voluptates inventore saepe deserunt
+                                        expedita
+                                        voluptatum aliquid, ullam mollitia placeat explicabo dicta incidunt totam
+                                        repellendus
+                                        nesciunt veniam esse vero similique magnam. Optio, iste laudantium dicta aliquam
+                                        animi
+                                        minima ducimus vel enim consequuntur sapiente unde ipsam! Nulla, harum voluptas!
+                                        Accusamus quae sint id omnis? Quaerat explicabo architecto, iure exercitationem
+                                        tenetur
+                                        consequatur natus nihil labore voluptatum corrupti veritatis aliquam fugiat!
+                                        Consequatur
+                                        maiores vero sit itaque obcaecati cumque ea sequi provident optio id sint cum,
+                                        non
+                                        aut
+                                        eos quod dolorem in fugiat quam veritatis placeat, nisi numquam excepturi quos
+                                        eligendi.
+                                    </p>
                                 </div>
                             </div>
-
-
-                            <!-- тимчасовий Головний контент -->
-                            <div class="temp-main-content dn" data-temp-main-content>
-                                <div class="window__body-note is-hidden">
-                                    Press <span>Esc</span> to exit full screen mode
-                                </div>
-                                <h1>Lorem Ipsum</h1>
-                                <br>
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima in earum
-                                    reprehenderit
-                                    quasi dolor iste et molestias temporibus expedita, doloremque dolore perspiciatis
-                                    necessitatibus aperiam delectus nisi quam consequuntur molestiae assumenda quas
-                                    minus
-                                    voluptatem fuga. Tenetur omnis aut neque necessitatibus. Voluptatem sapiente
-                                    voluptatibus architecto accusamus earum? Sunt modi officiis quam, ipsum possimus
-                                    laborum
-                                    explicabo dignissimos facere alias reiciendis ipsa voluptatem provident vero nihil
-                                    tenetur animi libero natus officia ducimus? Praesentium repellendus vero, minima
-                                    voluptatibus autem possimus, hic explicabo eligendi illo dolor eaque deleniti eos
-                                    incidunt non unde provident est voluptatem, laboriosam et. Consectetur blanditiis
-                                    saepe
-                                    magnam. Quo voluptas nesciunt laborum quae sint quas, illo iste vero doloribus. Odio
-                                    repudiandae odit iste dolores illo adipisci voluptates inventore saepe deserunt
-                                    expedita
-                                    voluptatum aliquid, ullam mollitia placeat explicabo dicta incidunt totam
-                                    repellendus
-                                    nesciunt veniam esse vero similique magnam. Optio, iste laudantium dicta aliquam
-                                    animi
-                                    minima ducimus vel enim consequuntur sapiente unde ipsam! Nulla, harum voluptas!
-                                    Accusamus quae sint id omnis? Quaerat explicabo architecto, iure exercitationem
-                                    tenetur
-                                    consequatur natus nihil labore voluptatum corrupti veritatis aliquam fugiat!
-                                    Consequatur
-                                    maiores vero sit itaque obcaecati cumque ea sequi provident optio id sint cum, non
-                                    aut
-                                    eos quod dolorem in fugiat quam veritatis placeat, nisi numquam excepturi quos
-                                    eligendi.
-                                </p>
+                            <div class="window__body-two dn" id="split-2" tabindex="0">
+                                <p class="dn">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
+                                    doloribus eos
+                                    expedita vel, sequi assumenda asperiores dignissimos alias, aspernatur quas placeat
+                                    magnam beatae ut, facilis at? Quia, ex? Quam dolorem odio nemo voluptas esse maxime
+                                    officia autem, provident eius amet eos accusantium deleniti sequi numquam nam
+                                    architecto magni id itaque.</p>
+                                <p class="dn">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
+                                    doloribus eos
+                                    expedita vel, sequi assumenda asperiores dignissimos alias, aspernatur quas placeat
+                                    magnam beatae ut, facilis at? Quia, ex? Quam dolorem odio nemo voluptas esse maxime
+                                    officia autem, provident eius amet eos accusantium deleniti sequi numquam nam
+                                    architecto magni id itaque.</p>
                             </div>
+
                         </div>
                         <div class="window__right-sidebar is-hidden">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Et eius sequi iure, quaerat
