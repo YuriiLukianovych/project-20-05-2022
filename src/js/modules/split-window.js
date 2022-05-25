@@ -6,15 +6,21 @@ export const splitWindow = () => {
     const split1 = document.querySelector("#split-1");
     const split2 = document.querySelector("#split-2");
     const subMenuSplit = document.querySelector(".split-submenu");
-    // const windowSplitText = document.querySelector(".window-split-text");
+    const windowSplitText = document.querySelector(".window-split-text");
     const splitIconsList = document.querySelectorAll(
         ".window-split-button>span>svg"
     );
-    document.addEventListener("click", (e) => {
-        if (e.target === subMenuSplit) {
-            console.log("click in submenu");
+
+    // закрити підменю, якщо клік був не по кнопці або не по субменю
+    window.addEventListener("click", (e) => {
+        if (
+            !e.target.closest(".window-split-button") &&
+            !e.target.closest(".split-submenu")
+        ) {
+            closeSubMenu();
         }
     });
+
     let split = 0; // variable for initialize Split
 
     splitBtn.addEventListener("click", () => {
@@ -26,9 +32,25 @@ export const splitWindow = () => {
     });
 
     function onSubMenuSplitClick(e) {
-        console.log("click!!!");
         const currentSplitMode = e.currentTarget.dataset.splitmode;
-        // windowSplitText.textContent = currentSplitMode;
+
+        // Текст про кількість вікон
+        switch (currentSplitMode) {
+            case "one":
+                windowSplitText.textContent = "one";
+                break;
+            case "two-row":
+                windowSplitText.textContent = "two";
+                break;
+            case "two-col":
+                windowSplitText.textContent = "two";
+                break;
+
+            default:
+                windowSplitText.textContent = "one";
+                break;
+        }
+
         splitIconsList.forEach((el) => {
             el.classList.add("dn");
         });
@@ -65,8 +87,6 @@ export const splitWindow = () => {
     }
 
     function focusInWindow() {
-        // mainWindow.dataset.split === "2"; 1 or 2
-
         split1.addEventListener("focusin", () => {
             if (split2.hasAttribute("data-active")) {
                 split2.removeAttribute("data-active");
@@ -100,7 +120,6 @@ export const splitWindow = () => {
         });
     }
     function splitVertical() {
-        console.log("split vertical");
         if (split1.hasAttribute("data-active")) {
             split1.classList.add("in-focus");
             split2.classList.remove("dn");
@@ -135,7 +154,6 @@ export const splitWindow = () => {
     }
 
     function splitHorizontal() {
-        console.log("split horizontal");
         if (split1.hasAttribute("data-active")) {
             split1.classList.add("in-focus");
             split2.classList.remove("dn");
@@ -170,7 +188,6 @@ export const splitWindow = () => {
     }
 
     function noSplit() {
-        console.log("no split");
         if (split1.classList.contains("in-focus")) {
             split1.classList.remove("in-focus");
         }
@@ -183,7 +200,7 @@ export const splitWindow = () => {
             split.destroy();
             split = 0;
         }
-        console.log("split -> ", split);
+
         if (!split1.hasAttribute("data-active")) {
             split1.classList.add("dn");
         }
