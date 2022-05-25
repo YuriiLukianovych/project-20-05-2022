@@ -147,7 +147,7 @@ export const splitWindow = () => {
         split = Split(["#split-1", "#split-2"], {
             direction: "horizontal", // horizontal, vertical
             minSize: 0,
-            gutterSize: 5,
+            gutterSize: 15,
             snapOffset: 0,
             sizes: [50, 50],
         });
@@ -181,7 +181,7 @@ export const splitWindow = () => {
         split = Split(["#split-1", "#split-2"], {
             direction: "vertical", // horizontal, vertical
             minSize: 0,
-            gutterSize: 5,
+            gutterSize: 15,
             snapOffset: 0,
             sizes: [50, 50],
         });
