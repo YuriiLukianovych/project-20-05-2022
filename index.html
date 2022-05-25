@@ -6,10 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css?_v=20220525125002"
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css?_v=20220525145731"
         integrity="sha512-wpPYUAdjBVSE4KJnH1VR1HeZfpl1ub8YT/NKx4PuQ5NmX2tKuGu6U/JRp5y+Y8XG2tV+wKQpNHVUX03MfMFn9Q=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="css/style.min.css?_v=20220525125002">
+    <link rel="stylesheet" href="css/style.min.css?_v=20220525145731">
 </head>
 
 <body class="default">
@@ -345,8 +345,24 @@
 
                         </div>
                         <div class="window__right-sidebar is-hidden">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Et eius sequi iure, quaerat
-                            praesentium quidem.
+                            <div class="right-sidebar__resizer">
+                                <svg class="resizer-icon">
+                                    <use href="img/sprite.svg#grip-vertical"></use>
+                                </svg>
+                            </div>
+                            <div class="right-sidebar__content">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Et eius sequi iure, quaerat
+                                praesentium quidem.
+                            </div>
+                            <div class="right-sidebar__right-menu">
+                                <ul>
+                                    <li>lorem</li>
+                                    <li>lorem</li>
+                                    <li>lorem</li>
+                                    <li>lorem</li>
+                                    <li>lorem</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                     <!-- =============================================================================== -->
@@ -362,13 +378,21 @@
                             <use href="img/sprite.svg#left-icon"></use>
                         </svg>
                     </button>
+
+                    <ul class="right-side-btn-panel">
+                        <li class="right-menu-btn">
+                            <svg class="menu-icon">
+                                <use href="img/sprite.svg#box"></use>
+                            </svg>
+                        </li>
+                    </ul>
                 </div>
             </div>
             <div class="window__footer"></div>
         </section>
     </main>
 
-    <script src="js/app.min.js?_v=20220525125002"></script>
+    <script src="js/app.min.js?_v=20220525145731"></script>
 </body>
 
 </html>
