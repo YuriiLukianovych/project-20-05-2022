@@ -40,8 +40,8 @@
             &.in-focus::after {
                 content: "";
                 display: block;
-                width: 4px;
-                height: 100px;
+                width: 3px;
+                height: 75px;
                 border-radius: 2px;
                 background-color: var(--accent-color);
                 position: absolute;
@@ -61,8 +61,8 @@
             &.in-focus::after {
                 content: "";
                 display: block;
-                width: 4px;
-                height: 100px;
+                width: 3px;
+                height: 75px;
                 border-radius: 2px;
                 background-color: var(--accent-color);
                 position: absolute;
@@ -84,12 +84,12 @@
             &.in-focus::after {
                 content: "";
                 display: block;
-                width: 100px;
-                height: 4px;
+                width: 75px;
+                height: 3px;
                 border-radius: 2px;
                 background-color: var(--accent-color);
                 position: absolute;
-                bottom: 0;
+                bottom: 1px;
                 left: 50%;
                 transform: translateX(-50%);
             }
@@ -111,8 +111,8 @@
             &.in-focus::after {
                 content: "";
                 display: block;
-                width: 100px;
-                height: 4px;
+                width: 75px;
+                height: 3px;
                 border-radius: 2px;
                 background-color: var(--accent-color);
                 position: absolute;
@@ -127,19 +127,49 @@
 .gutter {
     background-color: var(--bg1-color);
     // background-color: #fff;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    background-size: 25px 25px;
+    // background-repeat: no-repeat;
+    // background-position: 50% 50%;
+    // background-size: 25px 25px;
+    position: relative;
+
+    &::after {
+        content: "";
+        display: block;
+        width: 75px;
+        height: 75px;
+        background-color: transparent;
+        // background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: 25px 25px;
+
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
 }
 
 .gutter.gutter-horizontal {
-    background-image: url("@img/svgicons/grip-vertical.svg");
     cursor: col-resize;
-    // height: 100%;
+
+    &::after {
+        background-repeat: repeat-y;
+        background-image: url("@img/svgicons/grip-vertical.svg");
+    }
+
+    &:hover::after {
+        background-image: url("@img/svgicons/grip-vertical-accent.svg");
+    }
 }
 .gutter.gutter-vertical {
-    background-image: url("@img/svgicons/grip-gorizontal.svg");
     cursor: row-resize;
+    &::after {
+        background-repeat: repeat-x;
+        background-image: url("@img/svgicons/grip-gorizontal.svg");
+    }
+    &:hover::after {
+        background-image: url("@img/svgicons/grip-gorizontal-accent.svg");
+    }
 }
 
 // ===============================================================
