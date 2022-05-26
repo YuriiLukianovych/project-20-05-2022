@@ -34,38 +34,6 @@
 
         position: relative;
     }
-    &__left-sidebar {
-        flex-shrink: 0;
-        width: 200px;
-
-        background-color: var(--bg1-color);
-        transition: all 300ms;
-
-        display: flex;
-        flex-direction: column;
-        &.is-hidden {
-            position: absolute !important;
-            clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
-            clip: rect(1px, 1px, 1px, 1px);
-            padding: 0 !important;
-            border: 0 !important;
-            height: 1px !important;
-            width: 1px !important;
-            overflow: hidden;
-            transition: all 300ms;
-        }
-    }
-    .left-sidebar__header {
-        height: 40px;
-        padding: 10px;
-        flex-shrink: 0;
-    }
-    .left-sidebar__body {
-        flex-grow: 1;
-        background-color: var(--bg2-color);
-        padding: 10px;
-        border-radius: 10px 0 0 10px;
-    }
 
     .logo {
         width: 30px;

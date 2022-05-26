@@ -5,6 +5,7 @@ import { tempMainContent } from "./modules/temp-main-content.js";
 import { splitWindow } from "./modules/split-window.js";
 import { sidebarResizer } from "./modules/sidebar-resizer.js";
 import { loginMenu } from "./modules/login-menu.js";
+import { leftSidebarTabs } from "./modules/left-sidebar-tabs.js";
 
 themeSwitcher();
 fullScreen();
@@ -13,3 +14,4 @@ tempMainContent();
 splitWindow();
 sidebarResizer();
 loginMenu();
+leftSidebarTabs();

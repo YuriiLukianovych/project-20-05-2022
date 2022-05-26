@@ -58,10 +58,23 @@
 
                 </div>
                 <div class="window__left-sidebar is-hidden">
-                    <div class="left-sidebar__header">OpenvalU</div>
+                    <div class="left-sidebar__header">
+                        <ul class="tabs-btn__list">
+                            <li class="tabs-btn__item folder-tab active-tab">
+                                <svg class="tabs-icon">
+                                    <use href="@img/sprite.svg#folder"></use>
+                                </svg>
+                            </li>
+                            <li class="tabs-btn__item search-tab">
+                                <svg class="tabs-icon">
+                                    <use href="@img/sprite.svg#search"></use>
+                                </svg>
+                            </li>
+                        </ul>
+                    </div>
                     <div class="left-sidebar__body">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur in eum fugit beatae
-                        inventore est aut error, quod asperiores itaque?
+                        <div class="tabs-folder-content"></div>
+                        <div class="tabs-search-content dn"></div>
                     </div>
                 </div>
                 <div class="window__working-space">
