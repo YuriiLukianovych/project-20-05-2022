@@ -186,9 +186,10 @@
 .split-submenu {
     position: absolute;
     top: calc(100% + 4px);
-    left: -10px;
-    width: 100px;
-    background-color: var(--bg1-color);
+    padding: 3px;
+    left: -30px;
+    width: 120px;
+    background-color: var(--bg2-color);
 
     display: flex;
     flex-direction: column;
@@ -203,17 +204,19 @@
         align-items: center;
 
         padding-left: 10px;
-        padding-top: 12px;
-        padding-bottom: 12px;
+        padding-top: 10px;
+        padding-bottom: 10px;
         font-size: 13px;
         font-weight: 600;
-        cursor: pointer;
+
         &:hover {
             color: var(--hover-text-color);
-            background-color: var(--bg3-color);
+            // background-color: var(--bg3-color);
         }
         > span {
-            color: var(--bg3-color);
+            font-weight: 300;
+            color: var(--main-text-opacity-color);
+            margin-right: 10px;
         }
         &.active-icon {
             // background-color: var(--accent-color);
@@ -225,7 +228,7 @@
     .submenu-icon-wrapper {
         padding: 3px;
         border-radius: 5px;
-
+        cursor: pointer;
         display: flex;
         align-items: center;
         justify-content: center;
