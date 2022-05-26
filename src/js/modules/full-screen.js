@@ -3,14 +3,10 @@ export const fullScreen = () => {
     const elem = document.documentElement;
 
     fsBtn.addEventListener("click", () => {
+        console.log("click");
         closeFullscreen();
         openFullscreen();
         fsBtn.classList.toggle("activeFs");
-        if (fsBtn.classList.contains("activeFs")) {
-            fsBtn.lastElementChild.textContent = "Minimize";
-        } else {
-            fsBtn.lastElementChild.textContent = "Full screen";
-        }
     });
 
     /* Open Full Screen */

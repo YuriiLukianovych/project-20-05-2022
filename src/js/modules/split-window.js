@@ -6,7 +6,6 @@ export const splitWindow = () => {
     const split1 = document.querySelector("#split-1");
     const split2 = document.querySelector("#split-2");
     const subMenuSplit = document.querySelector(".split-submenu");
-    const windowSplitText = document.querySelector(".window-split-text");
     const splitIconsList = document.querySelectorAll(
         ".window-split-button>span>svg"
     );
@@ -33,23 +32,6 @@ export const splitWindow = () => {
 
     function onSubMenuSplitClick(e) {
         const currentSplitMode = e.currentTarget.dataset.splitmode;
-
-        // Текст про кількість вікон
-        switch (currentSplitMode) {
-            case "one":
-                windowSplitText.textContent = "one";
-                break;
-            case "two-row":
-                windowSplitText.textContent = "two";
-                break;
-            case "two-col":
-                windowSplitText.textContent = "two";
-                break;
-
-            default:
-                windowSplitText.textContent = "one";
-                break;
-        }
 
         splitIconsList.forEach((el) => {
             el.classList.add("dn");

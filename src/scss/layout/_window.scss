@@ -183,23 +183,25 @@
     }
     &__header {
         width: 100%;
+        height: 100%;
         // height: 36px;
         background-color: var(--bg2-color);
         // border-bottom: 2px solid #000000;
         border-radius: 10px 10px 0 0;
 
         display: flex;
-        align-items: center;
+        // align-items: center;
+        align-items: stretch;
         justify-content: space-between;
 
         ul.window__header-list {
             height: 100%;
             display: flex;
-            align-items: center;
+            align-items: stretch;
             padding-right: 10px;
             padding-left: 10px;
             & > li {
-                padding-top: 3px;
+                // padding-top: 3px;
                 height: 100%;
                 display: flex;
                 flex-direction: column;
@@ -207,9 +209,9 @@
                 justify-content: center;
                 color: var(--main-text-color);
                 cursor: pointer;
-                transition: color 300ms;
-                padding-left: 6px;
-                padding-right: 6px;
+                transition: color 300ms, background-color 300ms;
+                // padding-left: 10px;
+                // padding-right: 10px;
                 &:hover {
                     color: var(--hover-text-color);
                 }
@@ -228,7 +230,7 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                margin-bottom: 3px;
+                // margin-bottom: 3px;
             }
             & > li span:nth-child(2) {
                 font-size: 10px;
@@ -417,7 +419,8 @@
     }
     //  ==================  BUTTONS and ICONS ====================
     .menu-icon,
-    .header-icon {
+    .header-icon,
+    .header-right-icon {
         color: var(--main-text-color);
         fill: currentColor;
         transition: color 300ms;
@@ -429,6 +432,10 @@
         width: 12px;
         height: 12px;
     }
+    .header-right-icon {
+        width: 20px;
+        height: 20px;
+    }
     .menu-icon {
         width: 20px;
         height: 20px;
@@ -438,10 +445,10 @@
         .minimize-icon {
             display: none;
         }
-        &.active .minimize-icon {
+        &.activeFs .minimize-icon {
             display: block;
         }
-        &.active .full-screen-icon {
+        &.activeFs .full-screen-icon {
             display: none;
         }
     }
