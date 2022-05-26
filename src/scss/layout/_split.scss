@@ -203,9 +203,8 @@
         display: flex;
         align-items: center;
 
-        padding-left: 10px;
-        padding-top: 10px;
-        padding-bottom: 10px;
+        padding-top: 8px;
+        padding-bottom: 8px;
         font-size: 13px;
         font-weight: 600;
 
@@ -213,7 +212,7 @@
             color: var(--hover-text-color);
             // background-color: var(--bg3-color);
         }
-        > span {
+        > .split-submenu__number {
             font-weight: 300;
             color: var(--main-text-opacity-color);
             margin-right: 10px;

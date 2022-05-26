@@ -9,6 +9,7 @@ export const splitWindow = () => {
     const splitIconsList = document.querySelectorAll(
         ".window-split-button>span>svg"
     );
+    const subMenuBtnList = document.querySelectorAll(".submenu-icon-wrapper");
 
     // закрити підменю, якщо клік був не по кнопці або не по субменю
     window.addEventListener("click", (e) => {
@@ -26,7 +27,7 @@ export const splitWindow = () => {
         subMenuSplit.classList.toggle("split-submenu-hidden");
     });
 
-    [...subMenuSplit.children].forEach((li) => {
+    subMenuBtnList.forEach((li) => {
         li.addEventListener("click", onSubMenuSplitClick);
     });
 
@@ -41,7 +42,7 @@ export const splitWindow = () => {
         });
         icon.classList.remove("dn");
 
-        [...e.currentTarget.parentNode.children].forEach((el) => {
+        subMenuBtnList.forEach((el) => {
             el.classList.remove("active-icon");
         });
         e.currentTarget.classList.add("active-icon");
