@@ -22,10 +22,10 @@
         align-items: center;
         justify-content: center;
         &:hover {
-            background-color: var(--accent-color);
+            // background-color: var(--accent-color);
         }
         &:hover > svg {
-            color: var(--hover-text-color);
+            color: var(--accent-color);
         }
     }
 }
