@@ -35,6 +35,8 @@
     top: 100%;
     width: 240px;
     background-color: var(--bg2-color);
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 6px 1px var(--bg1-color);
     cursor: default;
     padding: 3px;
     display: flex;

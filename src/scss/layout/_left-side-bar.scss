@@ -7,6 +7,8 @@
 
     display: flex;
     flex-direction: column;
+
+    margin-right: 6px;
     &.is-hidden {
         position: absolute !important;
         clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
@@ -31,7 +33,7 @@
     flex-grow: 1;
     background-color: var(--bg2-color);
     // padding: 10px;
-    border-radius: 10px 0 0 10px;
+    border-radius: var(--border-radius) 0 0 var(--border-radius);
     overflow-x: hidden;
 }
 
@@ -39,29 +41,62 @@
 .tabs-btn {
     &__list {
         display: flex;
-        // height: 36px;
+        height: 36px;
+        // overflow: auto;
     }
 
     &__item {
-        width: 60px;
-        padding: 5px 0;
+        width: 55px;
 
         display: flex;
         justify-content: center;
-        align-items: flex-end;
+        align-items: center;
         cursor: pointer;
-        border-radius: 7px 7px 0 0;
+        border-radius: var(--border-radius) var(--border-radius) 0 0;
+        position: relative;
+        transition: all 300ms;
         &:hover .tabs-icon {
             color: var(--hover-text-color);
         }
+        &::before,
+        &::after {
+            position: absolute;
+            bottom: -20px;
+            content: "";
+            padding: 15px;
+            border-radius: 100%;
+            border: 20px solid var(--bg2-color);
+            transition: all 300ms;
+            opacity: 0;
+            visibility: hidden;
+        }
+        &::before {
+            right: 35px;
+            clip-path: inset(50% 28% 28% 50%);
+        }
+        &::after {
+            left: 35px;
+            clip-path: inset(50% 50% 28% 28%);
+        }
         &.active-tab {
             background-color: var(--bg2-color);
+            transition: all 300ms;
+
+            &::before,
+            &::after {
+                opacity: 1;
+                visibility: visible;
+            }
         }
     }
 }
 .tabs-icon {
-    width: 20px;
-    height: 20px;
+    // position: absolute;
+    // bottom: 0;
+    // right: 0;
+    width: 25px;
+    height: 25px;
+    // z-index: 2;
     color: var(--main-text-color);
 }
 // tabs content ======================================
@@ -69,11 +104,20 @@
     padding: 5px;
     width: 100%;
     height: 100%;
-    background-color: rgba(59, 83, 203, 0.5);
 }
 .tabs-search-content {
     padding: 5px;
     width: 100%;
     height: 100%;
-    background-color: rgba(238, 241, 22, 0.5);
+}
+
+// ==================
+.temp-icon {
+    margin-top: 200px;
+    width: 4px;
+    height: 84px;
+    color: rgb(239, 231, 231);
+    &:hover {
+        color: rgb(33, 18, 190);
+    }
 }
