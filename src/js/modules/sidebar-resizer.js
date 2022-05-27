@@ -2,58 +2,42 @@ export const sidebarResizer = () => {
     const rightSidebar = document.querySelector(".window__right-sidebar");
     const resizer = document.querySelector(".right-sidebar__resizer");
 
-    // resizer.addEventListener("mousedown", ts);
-    // resizer.addEventListener("mousemove", tm);
-    let x;
-    // let y;
-    // let hh;
-    let ww;
+    let mousePosition;
+    let boxWidth;
 
-    function ts(e) {
-        // x = e.touches[0].clientX;
-        // y = e.touches[0].clientY;
-        // hh = rightSidebar.clientHeight;
-        // ww = rightSidebar.clientWidth;
+    window.addEventListener("mousedown", (event) => {
+        if (event.target.closest(".right-sidebar__resizer")) {
+            mousePosition = event.x;
+            boxWidth = rightSidebar.clientWidth;
+            window.addEventListener("mousemove", mouseMove);
+        }
+    });
+
+    window.addEventListener("mouseup", () => {
+        window.removeEventListener("mousemove", mouseMove);
+    });
+
+    window.addEventListener("touchstart", (event) => {
+        if (event.target.closest(".right-sidebar__resizer")) {
+            mousePosition = event.touches[0].clientX;
+            boxWidth = rightSidebar.clientWidth;
+            window.addEventListener("touchmove", touchMove);
+        }
+    });
+
+    window.addEventListener("touchend", () => {
+        window.removeEventListener("touchmove", touchMove);
+    });
+
+    function mouseMove(event) {
+        const addWidth = mousePosition - event.x;
+        const width = boxWidth + addWidth;
+        rightSidebar.style.width = `${width}px`;
     }
 
-    function tm(e) {
-        // let mx = e.touches[0].clientX;
-        // my = e.touches[0].clientY;
-        // let cx = mx - x;
-        // cy = my - y;
-        // rightSidebar.style.width = cx + ww;
-        // rightSidebar.style.height = cy + hh;
-    }
-
-    resizer.addEventListener("mousedown", mousedown);
-
-    function mousedown(e) {
-        window.addEventListener("mousemove", mousemove);
-        window.addEventListener("mouseup", mouseup);
-        const rect = rightSidebar.getBoundingClientRect();
-        let prevX = e.clientX;
-        // let prevY = e.clientY;
-
-        function mousemove(e) {
-            let newX = prevX - e.clientX;
-            // let newY = prevY - e.clientY;
-
-            // const rect = rightSidebar.getBoundingClientRect();
-
-            rightSidebar.style.width = rightSidebar.clientWidth - newX + "px";
-            // rightSidebar.style.width =
-            //     Number.parseInt(rightSidebar.style.width) - newX + "px";
-            // console.log(Number.parseInt(rightSidebar.style.width));
-
-            // rightSidebar.style.width = rect.top - newY + "px";
-
-            prevX = e.clientX;
-            // prevY = e.clientY;
-        }
-
-        function mouseup() {
-            window.removeEventListener("mousemove", mousemove);
-            window.removeEventListener("mouseup", mouseup);
-        }
+    function touchMove(event) {
+        const addWidth = mousePosition - event.touches[0].clientX;
+        const width = boxWidth + addWidth;
+        rightSidebar.style.width = `${width}px`;
     }
 };

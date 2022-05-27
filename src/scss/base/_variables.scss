@@ -1,14 +1,18 @@
 /* ============================ ! ! ! ! ! ! ! =================================== */
-/* ============================ T H E M E S =================================== */
+/* ============================ V A R I A B L E S =================================== */
 /* ======================= CSS Variables with theme's colors ==================== */
+// =================== and other variables =================================
 :root {
     /* constant values for CSS transitions */
     --bg-transition: background-color 400ms ease-in-out;
     --color-transition: color 400ms ease-in-out;
     --accent-color: #627ec9;
     --right-sidebar-default-width: 250px;
+    --gap-between-rightside-and-main: 6px;
+    --left-sidebar-default-width: 200px;
     --header-height: 40px;
     --border-radius: 5px;
+    --footer-height: 15px;
 }
 
 /* default values of variables for positive\negative text, we will change it with input:color and JS */
