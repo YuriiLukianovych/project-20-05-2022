@@ -93,6 +93,6 @@ export const profile = () => {
     });
 
     popupProfileCANCEL.addEventListener("click", () => {
-        profilePopup.classList.add("is-hidden");
+        // profilePopup.classList.add("is-hidden");
     });
 };
