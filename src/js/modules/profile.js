@@ -55,6 +55,12 @@ export const profile = () => {
             [...popupContentList]
                 .find((div) => div.dataset.profile_popup === currentItem)
                 .classList.remove("dn");
+
+            window.addEventListener("keydown", (e) => {
+                if (e.code === "Escape") {
+                    profilePopup.classList.add("is-hidden");
+                }
+            });
         });
     });
 
