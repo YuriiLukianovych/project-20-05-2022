@@ -289,31 +289,31 @@
                                 <button class="login-menu__btn" type="button">Some button</button>
                             </div>
                             <ul class="login-menu__list">
-                                <li class="login-menu__item" data-profileBtn="my-profile">
+                                <li class="login-menu__item" data-profile_btn="my-profile">
                                     <svg class="login-menu__icon">
                                         <use href="@img/login-menu-sprite.svg#profile2"></use>
                                     </svg>
                                     <span>My Profile</span>
                                 </li>
-                                <li class="login-menu__item theme-switcher-btn" data-profileBtn="colors-themes">
+                                <li class="login-menu__item theme-switcher-btn" data-profile_btn="colors-themes">
                                     <svg class="login-menu__icon">
                                         <use href="@img/login-menu-sprite.svg#palette"></use>
                                     </svg>
                                     <span>Colors & Themes</span>
                                 </li>
-                                <li class="login-menu__item" data-profileBtn="preferences">
+                                <li class="login-menu__item" data-profile_btn="preferences">
                                     <svg class="login-menu__icon">
                                         <use href="@img/login-menu-sprite.svg#preferences"></use>
                                     </svg>
                                     <span>Preferences</span>
                                 </li>
-                                <li class="login-menu__item" data-profileBtn="my-data">
+                                <li class="login-menu__item" data-profile_btn="my-data">
                                     <svg class="login-menu__icon">
                                         <use href="@img/login-menu-sprite.svg#data2"></use>
                                     </svg>
                                     <span>My Data</span>
                                 </li>
-                                <li class="login-menu__item" data-profileBtn="plans-billings">
+                                <li class="login-menu__item" data-profile_btn="plans-billings">
                                     <svg class="login-menu__icon">
                                         <use href="@img/login-menu-sprite.svg#rocket"></use>
                                     </svg>
@@ -361,31 +361,31 @@
                     <!-- left menu -->
                     <div class="profile-popup__menu">
                         <ul class="profile-popup__list">
-                            <li class="profile-popup__item active-popup-profile-item" data-profilePopup="my-profile">
+                            <li class="profile-popup__item active-popup-profile-item" data-profile_popup="my-profile">
                                 <svg class="login-menu__icon">
                                     <use href="@img/login-menu-sprite.svg#profile2"></use>
                                 </svg>
                                 <span>My Profile</span>
                             </li>
-                            <li class="profile-popup__item theme-switcher-btn" data-profilePopup="colors-themes">
+                            <li class="profile-popup__item theme-switcher-btn" data-profile_popup="colors-themes">
                                 <svg class="login-menu__icon">
                                     <use href="@img/login-menu-sprite.svg#palette"></use>
                                 </svg>
                                 <span>Colors & Themes</span>
                             </li>
-                            <li class="profile-popup__item" data-profilePopup="preferences">
+                            <li class="profile-popup__item" data-profile_popup="preferences">
                                 <svg class="login-menu__icon">
                                     <use href="@img/login-menu-sprite.svg#preferences"></use>
                                 </svg>
                                 <span>Preferences</span>
                             </li>
-                            <li class="profile-popup__item" data-profilePopup="my-data">
+                            <li class="profile-popup__item" data-profile_popup="my-data">
                                 <svg class="login-menu__icon">
                                     <use href="@img/login-menu-sprite.svg#data2"></use>
                                 </svg>
                                 <span>My Data</span>
                             </li>
-                            <li class="profile-popup__item" data-profilePopup="plans-billings">
+                            <li class="profile-popup__item" data-profile_popup="plans-billings">
                                 <svg class="login-menu__icon">
                                     <use href="@img/login-menu-sprite.svg#rocket"></use>
                                 </svg>
@@ -396,24 +396,24 @@
 
                     <!-- content box -->
                     <div class="profile-popup__content-box">
-                        <div class="profile-popup__content" data-profilePopup="my-profile">
+                        <div class="profile-popup__content" data-profile_popup="my-profile">
                             My Profile
                         </div>
 
-                        <div class="profile-popup__content dn" data-profilePopup="preferences">
+                        <div class="profile-popup__content dn" data-profile_popup="preferences">
                             Preferences
                         </div>
 
-                        <div class="profile-popup__content dn" data-profilePopup="my-data">
+                        <div class="profile-popup__content dn" data-profile_popup="my-data">
                             My Data
                         </div>
 
-                        <div class="profile-popup__content dn" data-profilePopup="plans-billings">
+                        <div class="profile-popup__content dn" data-profile_popup="plans-billings">
                             Plans & Billings
                         </div>
 
                         <!-- theme switcher -->
-                        <div class="profile-popup__content dn" data-profilePopup="colors-themes">
+                        <div class="profile-popup__content dn" data-profile_popup="colors-themes">
                             <h2 class="theme-switcher__title">Theme Selection</h2>
                             <ul class="theme__list">
                                 <li class="theme__item" data-theme="theme-1">
@@ -507,7 +507,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="profile-popup__footer"></div>
+                <div class="profile-popup__footer">
+                    <button class="profile-popup__button" type="button" data-profile-popup-cancel>Cansel</button>
+                    <button class="profile-popup__button profile-popup__button--ok" type="button"
+                        data-profile-popup-ok>Ok</button>
+                </div>
             </div>
 
         </section>

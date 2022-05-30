@@ -32,9 +32,9 @@
     box-shadow: 3px 3px 4px 1px var(--bg1-color);
 
     position: absolute;
-    top: 50%;
+    top: 70px;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
     transition: all 250ms;
 
     &.is-hidden {
@@ -45,7 +45,7 @@
     }
 
     &__header {
-        padding: 0 5px;
+        padding: 0 10px;
         height: 36px;
         border-bottom: 2px solid var(--bg3-color);
     }
@@ -105,9 +105,31 @@
     }
 
     &__footer {
-        padding: 0 5px;
+        padding: 0 10px;
         height: 36px;
         border-top: 2px solid var(--bg3-color);
+
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    &__button {
+        outline: none;
+        background-color: transparent;
+        border: 1px solid var(--accent-color);
+        color: var(--accent-color);
+        border-radius: var(--border-radius);
+        padding: 2px 5px;
+        cursor: pointer;
+
+        &:first-child {
+            margin-right: 10px;
+        }
+
+        &--ok {
+            background-color: var(--accent-color);
+            color: var(--main-text-color);
+        }
     }
 }
 .close-theme-switcher-btn {
