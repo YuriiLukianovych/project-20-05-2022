@@ -289,31 +289,31 @@
                                 <button class="login-menu__btn" type="button">Some button</button>
                             </div>
                             <ul class="login-menu__list">
-                                <li class="login-menu__item">
+                                <li class="login-menu__item" data-profileBtn="my-profile">
                                     <svg class="login-menu__icon">
                                         <use href="@img/login-menu-sprite.svg#profile2"></use>
                                     </svg>
                                     <span>My Profile</span>
                                 </li>
-                                <li class="login-menu__item theme-switcher-btn">
+                                <li class="login-menu__item theme-switcher-btn" data-profileBtn="colors-themes">
                                     <svg class="login-menu__icon">
                                         <use href="@img/login-menu-sprite.svg#palette"></use>
                                     </svg>
                                     <span>Colors & Themes</span>
                                 </li>
-                                <li class="login-menu__item">
+                                <li class="login-menu__item" data-profileBtn="preferences">
                                     <svg class="login-menu__icon">
                                         <use href="@img/login-menu-sprite.svg#preferences"></use>
                                     </svg>
                                     <span>Preferences</span>
                                 </li>
-                                <li class="login-menu__item">
+                                <li class="login-menu__item" data-profileBtn="my-data">
                                     <svg class="login-menu__icon">
                                         <use href="@img/login-menu-sprite.svg#data2"></use>
                                     </svg>
                                     <span>My Data</span>
                                 </li>
-                                <li class="login-menu__item">
+                                <li class="login-menu__item" data-profileBtn="plans-billings">
                                     <svg class="login-menu__icon">
                                         <use href="@img/login-menu-sprite.svg#rocket"></use>
                                     </svg>
@@ -346,97 +346,170 @@
             <div class="window__footer"></div>
 
             <!-- // попапи та вспливаючі вікна -->
-            <div class="theme-switcher-wrapper is-hidden">
-                <button class="close-theme-switcher-btn" type="button">
-                    <svg class="menu-icon">
-                        <use href="@img/sprite.svg#x"></use>
-                    </svg>
-                </button>
-                <h2 class="theme-switcher__title">Theme Selection</h2>
-                <ul class="theme__list">
-                    <li class="theme__item" data-theme="theme-1">
-                        <div class="preview__wrapper default">
-                            <div class="preview">
-                                <div class="preview__header">
-                                    <div class="preview__text"></div>
-                                </div>
-                                <div class="preview__body"></div>
-                            </div>
-                        </div>
-                        <input type="radio" name="color-switcher" id="color-switcher1" data-theme="theme-1" checked />
-                        <label for="color-switcher1">Default</label>
-                    </li>
-                    <li class="theme__item" data-theme="theme-2">
-                        <div class="preview__wrapper midnight-blue">
-                            <div class="preview">
-                                <div class="preview__header">
-                                    <div class="preview__text"></div>
-                                </div>
-                                <div class="preview__body"></div>
-                            </div>
-                        </div>
-                        <input type="radio" name="color-switcher" id="color-switcher2" data-theme="theme-2" />
-                        <label for="color-switcher2">Midnight Blue</label>
-                    </li>
-                    <li class="theme__item" data-theme="theme-3">
-                        <div class="preview__wrapper deep-ocean">
-                            <div class="preview">
-                                <div class="preview__header">
-                                    <div class="preview__text"></div>
-                                </div>
-                                <div class="preview__body"></div>
-                            </div>
-                        </div>
-                        <input type="radio" name="color-switcher" id="color-switcher3" data-theme="theme-3" />
-                        <label for="color-switcher3">Deep Ocean</label>
-                    </li>
-                    <li class="theme__item" data-theme="theme-4">
-                        <div class="preview__wrapper monochrome">
-                            <div class="preview">
-                                <div class="preview__header">
-                                    <div class="preview__text"></div>
-                                </div>
-                                <div class="preview__body"></div>
-                            </div>
-                        </div>
-                        <input type="radio" name="color-switcher" id="color-switcher4" data-theme="theme-4" />
-                        <label for="color-switcher4">Monochrome</label>
-                    </li>
-                    <li class="theme__item" data-theme="theme-5">
-                        <div class="preview__wrapper pitch-black">
-                            <div class="preview">
-                                <div class="preview__header">
-                                    <div class="preview__text"></div>
-                                </div>
-                                <div class="preview__body"></div>
-                            </div>
-                        </div>
-                        <input type="radio" name="color-switcher" id="color-switcher5" data-theme="theme-5" />
-                        <label for="color-switcher5">Pitch Black</label>
-                    </li>
-                    <li class="theme__item" data-theme="theme-6">
-                        <div class="preview__wrapper other-theme">
-                            <div class="preview">
-                                <div class="preview__header">
-                                    <div class="preview__text"></div>
-                                </div>
-                                <div class="preview__body"></div>
-                            </div>
-                        </div>
-                        <input type="radio" name="color-switcher" id="color-switcher6" data-theme="theme-6" />
-                        <label for="color-switcher6">Other Theme</label>
-                    </li>
-                </ul>
-                <h2 class="theme-switcher__title-2">Custom Color Selections</h2>
-                <div class="colors">
-                    <label for="positive-color">Positive Color:
-                        <input type="color" name="positive-color" id="positive-color" value="#57d03b" />
-                    </label>
-                    <label for="negative-color">Negative Color:
-                        <input type="color" name="negative-color" id="negative-color" value="#ff3c41" />
-                    </label>
+
+            <!-- P R O F I L E    P O P U P -->
+            <div class="profile-popup is-hidden">
+                <div class="profile-popup__header">
+                    <h2 class="profile-popup__caption">Lorem Settings</h2>
+                    <button class="close-profile-popup-btn" type="button" data-profile-popup-close-btn>
+                        <svg class="menu-icon">
+                            <use href="@img/sprite.svg#x"></use>
+                        </svg>
+                    </button>
                 </div>
+                <div class="profile-popup__body">
+                    <!-- left menu -->
+                    <div class="profile-popup__menu">
+                        <ul class="profile-popup__list">
+                            <li class="profile-popup__item active-popup-profile-item" data-profilePopup="my-profile">
+                                <svg class="login-menu__icon">
+                                    <use href="@img/login-menu-sprite.svg#profile2"></use>
+                                </svg>
+                                <span>My Profile</span>
+                            </li>
+                            <li class="profile-popup__item theme-switcher-btn" data-profilePopup="colors-themes">
+                                <svg class="login-menu__icon">
+                                    <use href="@img/login-menu-sprite.svg#palette"></use>
+                                </svg>
+                                <span>Colors & Themes</span>
+                            </li>
+                            <li class="profile-popup__item" data-profilePopup="preferences">
+                                <svg class="login-menu__icon">
+                                    <use href="@img/login-menu-sprite.svg#preferences"></use>
+                                </svg>
+                                <span>Preferences</span>
+                            </li>
+                            <li class="profile-popup__item" data-profilePopup="my-data">
+                                <svg class="login-menu__icon">
+                                    <use href="@img/login-menu-sprite.svg#data2"></use>
+                                </svg>
+                                <span>My Data</span>
+                            </li>
+                            <li class="profile-popup__item" data-profilePopup="plans-billings">
+                                <svg class="login-menu__icon">
+                                    <use href="@img/login-menu-sprite.svg#rocket"></use>
+                                </svg>
+                                <span>Plans & Billings</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- content box -->
+                    <div class="profile-popup__content-box">
+                        <div class="profile-popup__content" data-profilePopup="my-profile">
+                            My Profile
+                        </div>
+
+                        <div class="profile-popup__content dn" data-profilePopup="preferences">
+                            Preferences
+                        </div>
+
+                        <div class="profile-popup__content dn" data-profilePopup="my-data">
+                            My Data
+                        </div>
+
+                        <div class="profile-popup__content dn" data-profilePopup="plans-billings">
+                            Plans & Billings
+                        </div>
+
+                        <!-- theme switcher -->
+                        <div class="profile-popup__content dn" data-profilePopup="colors-themes">
+                            <h2 class="theme-switcher__title">Theme Selection</h2>
+                            <ul class="theme__list">
+                                <li class="theme__item" data-theme="theme-1">
+                                    <div class="preview__wrapper default">
+                                        <div class="preview">
+                                            <div class="preview__header">
+                                                <div class="preview__text"></div>
+                                            </div>
+                                            <div class="preview__body"></div>
+                                        </div>
+                                    </div>
+                                    <input type="radio" name="color-switcher" id="color-switcher1" data-theme="theme-1"
+                                        checked />
+                                    <label for="color-switcher1">Default</label>
+                                </li>
+                                <li class="theme__item" data-theme="theme-2">
+                                    <div class="preview__wrapper midnight-blue">
+                                        <div class="preview">
+                                            <div class="preview__header">
+                                                <div class="preview__text"></div>
+                                            </div>
+                                            <div class="preview__body"></div>
+                                        </div>
+                                    </div>
+                                    <input type="radio" name="color-switcher" id="color-switcher2"
+                                        data-theme="theme-2" />
+                                    <label for="color-switcher2">Midnight Blue</label>
+                                </li>
+                                <li class="theme__item" data-theme="theme-3">
+                                    <div class="preview__wrapper deep-ocean">
+                                        <div class="preview">
+                                            <div class="preview__header">
+                                                <div class="preview__text"></div>
+                                            </div>
+                                            <div class="preview__body"></div>
+                                        </div>
+                                    </div>
+                                    <input type="radio" name="color-switcher" id="color-switcher3"
+                                        data-theme="theme-3" />
+                                    <label for="color-switcher3">Deep Ocean</label>
+                                </li>
+                                <li class="theme__item" data-theme="theme-4">
+                                    <div class="preview__wrapper monochrome">
+                                        <div class="preview">
+                                            <div class="preview__header">
+                                                <div class="preview__text"></div>
+                                            </div>
+                                            <div class="preview__body"></div>
+                                        </div>
+                                    </div>
+                                    <input type="radio" name="color-switcher" id="color-switcher4"
+                                        data-theme="theme-4" />
+                                    <label for="color-switcher4">Monochrome</label>
+                                </li>
+                                <li class="theme__item" data-theme="theme-5">
+                                    <div class="preview__wrapper pitch-black">
+                                        <div class="preview">
+                                            <div class="preview__header">
+                                                <div class="preview__text"></div>
+                                            </div>
+                                            <div class="preview__body"></div>
+                                        </div>
+                                    </div>
+                                    <input type="radio" name="color-switcher" id="color-switcher5"
+                                        data-theme="theme-5" />
+                                    <label for="color-switcher5">Pitch Black</label>
+                                </li>
+                                <li class="theme__item" data-theme="theme-6">
+                                    <div class="preview__wrapper other-theme">
+                                        <div class="preview">
+                                            <div class="preview__header">
+                                                <div class="preview__text"></div>
+                                            </div>
+                                            <div class="preview__body"></div>
+                                        </div>
+                                    </div>
+                                    <input type="radio" name="color-switcher" id="color-switcher6"
+                                        data-theme="theme-6" />
+                                    <label for="color-switcher6">Other Theme</label>
+                                </li>
+                            </ul>
+                            <h2 class="theme-switcher__title-2">Custom Color Selections</h2>
+                            <div class="colors">
+                                <label for="positive-color">Positive Color:
+                                    <input type="color" name="positive-color" id="positive-color" value="#57d03b" />
+                                </label>
+                                <label for="negative-color">Negative Color:
+                                    <input type="color" name="negative-color" id="negative-color" value="#ff3c41" />
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile-popup__footer"></div>
             </div>
+
         </section>
     </main>
 

@@ -119,20 +119,4 @@ export const themeSwitcher = () => {
             negativeInputColor.value = savedNegativeColor;
         }
     }
-    // ==================================== open \ close theme switcher ==============================
-    const openBtn = document.querySelector(".theme-switcher-btn");
-    const closeBtn = document.querySelector(".close-theme-switcher-btn");
-    const wrapperTheme = document.querySelector(".theme-switcher-wrapper");
-    const mainWindow = document.querySelector("[data-main-window]");
-    const allButtons = document.querySelectorAll(".window__header li");
-
-    openBtn.addEventListener("click", () => {
-        wrapperTheme.classList.remove("is-hidden");
-        openBtn.classList.add("active");
-    });
-    closeBtn.addEventListener("click", () => {
-        console.log("click");
-        wrapperTheme.classList.add("is-hidden");
-        openBtn.classList.remove("active");
-    });
 };
