@@ -6,10 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css?_v=20220530144320"
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css?_v=20220601171553"
         integrity="sha512-wpPYUAdjBVSE4KJnH1VR1HeZfpl1ub8YT/NKx4PuQ5NmX2tKuGu6U/JRp5y+Y8XG2tV+wKQpNHVUX03MfMFn9Q=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="css/style.min.css?_v=20220530144320">
+    <link rel="stylesheet" href="css/style.min.css?_v=20220601171553">
 </head>
 
 <body class="default">
@@ -275,59 +275,63 @@
                     <!-- =============================================================================== -->
                 </div>
                 <div class="window__right-side">
-                    <butyton class="sign-in-up" type="button">
+
+                    <div class="login-menu">
+                        <!-- profile-icon -->
                         <div class="sign-in-up__icon-wrapper">
                             <svg class="menu-icon">
                                 <use href="img/sprite.svg#person"></use>
                             </svg>
                         </div>
-
-                        <div class="login-menu login-menu-hidden">
-                            <div class="login-menu__header">
-                                <p class="login-menu__user-name">Lorem Lorem</p>
-                                <p class="login-menu__user-mail">loremlorem@lorem.com</p>
-                                <button class="login-menu__btn" type="button">Some button</button>
-                            </div>
-                            <ul class="login-menu__list">
-                                <li class="login-menu__item" data-profile_btn="my-profile">
-                                    <svg class="login-menu__icon">
-                                        <use href="img/login-menu-sprite.svg#profile2"></use>
-                                    </svg>
-                                    <span>My Profile</span>
-                                </li>
-                                <li class="login-menu__item theme-switcher-btn" data-profile_btn="colors-themes">
-                                    <svg class="login-menu__icon">
-                                        <use href="img/login-menu-sprite.svg#palette"></use>
-                                    </svg>
-                                    <span>Colors & Themes</span>
-                                </li>
-                                <li class="login-menu__item" data-profile_btn="preferences">
-                                    <svg class="login-menu__icon">
-                                        <use href="img/login-menu-sprite.svg#preferences"></use>
-                                    </svg>
-                                    <span>Preferences</span>
-                                </li>
-                                <li class="login-menu__item" data-profile_btn="my-data">
-                                    <svg class="login-menu__icon">
-                                        <use href="img/login-menu-sprite.svg#data2"></use>
-                                    </svg>
-                                    <span>My Data</span>
-                                </li>
-                                <li class="login-menu__item" data-profile_btn="plans-billings">
-                                    <svg class="login-menu__icon">
-                                        <use href="img/login-menu-sprite.svg#rocket"></use>
-                                    </svg>
-                                    <span>Plans & Billings</span>
-                                </li>
-                                <li class="login-menu__item">
-                                    <svg class="login-menu__icon">
-                                        <use href="img/login-menu-sprite.svg#signout"></use>
-                                    </svg>
-                                    <span>Sign Out</span>
-                                </li>
-                            </ul>
+                        <div class="login-menu__header">
+                            <button class="login-menu__open-btn" type="button" data-login-menu-open-btn>
+                                <svg class="login-menu__open-btn-icon">
+                                    <use href="img/login-menu-sprite.svg#caret-down"></use>
+                                </svg>
+                            </button>
+                            <p class="login-menu__user-name">Yurii Lukianovych</p>
+                            <!-- <p class="login-menu__user-mail">loremlorem@lorem.com</p> -->
                         </div>
-                    </butyton>
+                        <ul class="login-menu__list">
+                            <li class="login-menu__item" data-profile_btn="my-profile">
+                                <svg class="login-menu__icon">
+                                    <use href="img/login-menu-sprite.svg#profile2"></use>
+                                </svg>
+                                <span>My Profile</span>
+                            </li>
+                            <li class="login-menu__item theme-switcher-btn" data-profile_btn="colors-themes">
+                                <svg class="login-menu__icon">
+                                    <use href="img/login-menu-sprite.svg#palette"></use>
+                                </svg>
+                                <span>Colors & Themes</span>
+                            </li>
+                            <li class="login-menu__item" data-profile_btn="preferences">
+                                <svg class="login-menu__icon">
+                                    <use href="img/login-menu-sprite.svg#preferences"></use>
+                                </svg>
+                                <span>Preferences</span>
+                            </li>
+                            <li class="login-menu__item" data-profile_btn="my-data">
+                                <svg class="login-menu__icon">
+                                    <use href="img/login-menu-sprite.svg#data2"></use>
+                                </svg>
+                                <span>My Data</span>
+                            </li>
+                            <li class="login-menu__item" data-profile_btn="plans-billings">
+                                <svg class="login-menu__icon">
+                                    <use href="img/login-menu-sprite.svg#rocket"></use>
+                                </svg>
+                                <span>Plans & Billings</span>
+                            </li>
+                            <li class="login-menu__item">
+                                <svg class="login-menu__icon">
+                                    <use href="img/login-menu-sprite.svg#signout"></use>
+                                </svg>
+                                <span>Sign Out</span>
+                            </li>
+                        </ul>
+                    </div>
+
                     <button class="right-side-btn" type="button">
                         <svg class="sidebar-icon">
                             <use href="img/sprite.svg#left-icon"></use>
@@ -517,7 +521,7 @@
         </section>
     </main>
 
-    <script src="js/app.min.js?_v=20220530144320"></script>
+    <script src="js/app.min.js?_v=20220601171553"></script>
 </body>
 
 </html>
