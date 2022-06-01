@@ -146,14 +146,13 @@
 
         border-radius: 0 0 var(--border-radius) var(--border-radius);
         background-color: var(--bg2-color);
-
         position: absolute;
         right: 0;
         top: 40px;
 
         overflow: hidden;
         max-height: 0;
-        transition: max-height 200ms, border 200ms, opacity 200ms;
+        transition: max-height 200ms, border 200ms, opacity 200ms 100ms;
         opacity: 0;
         &.login-menu-list-is-visible {
             max-height: 400px;
