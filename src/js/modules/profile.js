@@ -1,6 +1,10 @@
 export const profile = () => {
-    const logBtn = document.querySelector(".sign-in-up");
+    // const logBtn = document.querySelector(".sign-in-up");
+    const logMenuOpenBtn = document.querySelector("[data-login-menu-open-btn]");
+
     const logMenu = document.querySelector(".login-menu");
+    const logMenuHeader = document.querySelector(".login-menu__header");
+    const logMenuList = document.querySelector(".login-menu__list");
     const profileBtnList = document.querySelectorAll("[data-profile_btn]");
     const profilePopupBtnList = document.querySelectorAll(
         "li[data-profile_popup]"
@@ -16,27 +20,41 @@ export const profile = () => {
     const popupProfileCANCEL = document.querySelector(
         "[data-profile-popup-cancel]"
     );
+    // =======================================================================
 
-    logBtn.addEventListener("click", () => {
-        logMenu.classList.toggle("login-menu-hidden");
+    logMenuOpenBtn.addEventListener("click", () => {
+        logMenuOpenBtn.classList.toggle("log-menu-active-btn");
+        logMenuList.classList.toggle("login-menu-list-is-visible");
+        logMenuHeader.classList.toggle("login-menu-is-open");
     });
 
-    // закрити підменю, якщо клік був не по кнопці або не по субменю
-    window.addEventListener("click", (e) => {
-        if (
-            !e.target.closest(".sign-in-up") &&
-            !e.target.closest(".login-menu")
-        ) {
-            closelogMenu();
+    logMenu.addEventListener("mouseleave", () => {
+        if (logMenuHeader.classList.contains("login-menu-is-open")) {
+            logMenuOpenBtn.click();
         }
     });
 
-    function closelogMenu() {
-        logMenu.classList.add("login-menu-hidden");
-    }
+    // logBtn.addEventListener("click", () => {
+    //     logMenu.classList.toggle("login-menu-hidden");
+    // });
+
+    // закрити підменю, якщо клік був не по кнопці або не по субменю
+    // window.addEventListener("click", (e) => {
+    //     if (
+    //         !e.target.closest(".sign-in-up") &&
+    //         !e.target.closest(".login-menu")
+    //     ) {
+    //         closelogMenu();
+    //     }
+    // });
+
+    // function closelogMenu() {
+    //     logMenu.classList.add("login-menu-hidden");
+    // }
 
     profileBtnList.forEach((btn) => {
         btn.addEventListener("click", () => {
+            logMenuOpenBtn.click();
             profilePopup.classList.remove("is-hidden");
             let currentItem = btn.dataset.profile_btn;
             console.log(currentItem);
