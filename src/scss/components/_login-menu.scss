@@ -158,7 +158,10 @@
         max-height: 0;
         transition: max-height 200ms, border 200ms, opacity 200ms 100ms;
         opacity: 0;
+
+        pointer-events: none;
         &.login-menu-list-is-visible {
+            pointer-events: all;
             max-height: 400px;
             opacity: 1;
             border-color: var(--main-text-color);
