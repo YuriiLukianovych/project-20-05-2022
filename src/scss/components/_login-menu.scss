@@ -17,6 +17,8 @@
 
         transition: background-color 300ms;
 
+        cursor: pointer;
+
         & > svg {
             transition: fill 300ms;
         }
@@ -107,6 +109,8 @@
 
         transition: opacity 300ms 200ms, border-radius 300ms 200ms;
         opacity: 0;
+
+        cursor: pointer;
 
         &.login-menu-is-open {
             border-radius: var(--border-radius) var(--border-radius) 0 0;

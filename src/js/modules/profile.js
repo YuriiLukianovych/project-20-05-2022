@@ -1,5 +1,5 @@
 export const profile = () => {
-    // const logBtn = document.querySelector(".sign-in-up");
+    const logBtn = document.querySelector(".sign-in-up__icon-wrapper");
     const logMenuOpenBtn = document.querySelector("[data-login-menu-open-btn]");
 
     const logMenu = document.querySelector(".login-menu");
@@ -22,17 +22,26 @@ export const profile = () => {
     );
     // =======================================================================
 
-    logMenuOpenBtn.addEventListener("click", () => {
+    // logMenuOpenBtn.addEventListener("click", () => {
+    //     logMenuOpenBtn.classList.toggle("log-menu-active-btn");
+    //     logMenuList.classList.toggle("login-menu-list-is-visible");
+    //     logMenuHeader.classList.toggle("login-menu-is-open");
+    // });
+
+    function onProfileClick() {
         logMenuOpenBtn.classList.toggle("log-menu-active-btn");
         logMenuList.classList.toggle("login-menu-list-is-visible");
         logMenuHeader.classList.toggle("login-menu-is-open");
-    });
+    }
 
     logMenu.addEventListener("mouseleave", () => {
         if (logMenuHeader.classList.contains("login-menu-is-open")) {
-            logMenuOpenBtn.click();
+            // logMenuOpenBtn.click();
+            logMenuHeader.click();
         }
     });
+    logBtn.addEventListener("click", onProfileClick);
+    logMenuHeader.addEventListener("click", onProfileClick);
 
     // logBtn.addEventListener("click", () => {
     //     logMenu.classList.toggle("login-menu-hidden");
